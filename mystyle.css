@@ -9,10 +9,13 @@
 }
 .card{
 	border:none;
+	
+	
 }
 
 .card *:hover{
 	text-decoration: none !important;
+
 
 }
 #a:hover + #b{
@@ -22,16 +25,32 @@
 
 body {
     font-family: 'Poppins';font-size: 22px;
-    height: 100%
+    
 }
 
 .container{
-	padding:0px;
-	
+	padding:0;
 
 }
 .row{
-	padding:0px;
+	padding:0;
 	
 }
 
+.card-body{
+	
+	padding-right: 0;
+	padding-left: 0; 
+}
+
+
+
+
+@media (min-width: 576px) {
+
+	
+	.row {
+		height: 50%;
+	}
+
+}
