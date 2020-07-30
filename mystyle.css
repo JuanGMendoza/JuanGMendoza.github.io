@@ -28,14 +28,8 @@ body {
     
 }
 
-.container{
-	padding:0;
 
-}
-.row{
-	padding:0;
-	
-}
+
 
 .card-body{
 	
@@ -48,9 +42,11 @@ body {
 
 @media (min-width: 576px) {
 
-	
-	.row {
+	.container-fluid .row{
+		
 		height: 50%;
+		
 	}
+	
 
 }
