@@ -10,7 +10,6 @@
 .card{
 	border:none;
 	
-	
 }
 
 .card *:hover{
@@ -18,8 +17,8 @@
 
 
 }
-#a:hover + #b{
-	color:white !important;
+.test{
+	background-color: blue;
 }
 
 
