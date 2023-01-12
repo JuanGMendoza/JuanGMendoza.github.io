@@ -1,0 +1,180 @@
+/* Poppins Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+
+/* Global Variables --------------------------------------------------------- */
+* {
+  /* colors */
+  --light: #ffffff;
+  --grey-100: #f5f5f5;
+  --grey-500: #5e6770;
+  --grey-600: #343a40;
+  --blue-500: #2282e0;
+  --blue-600: #1f6bb5;
+
+  /* units */
+  --border-radius: 8px;
+  --main-spacing: 16px;
+  --page-width: 1150px;
+}
+
+
+/* Override Defaults ------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  line-height: 1.5em;
+}
+
+
+/* Custom Presets ----------------------------------------------------------- */
+a {
+  color: var(--blue-500);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--blue-600);
+  text-decoration: underline;
+}
+
+body {
+  overflow-y: scroll;  /* scrollbar always active - prevents layout shift */
+  background-image:  linear-gradient(#f5f5f5 1px, transparent 1px), linear-gradient(to right, #f5f5f5 1px, #ffffff 1px);
+  background-size: 20px 20px;
+  /* Force footer to bottom of screen. */
+  min-height: 100vh;  /* body is always at least as tall as the device screen */
+  display: flex;           /* The body element aligns its direct children... */
+  flex-direction: column;  /* ...into a vertical column and... */
+}
+main { flex: 1; }          /* ...the main element fills all available height. */
+
+button {
+  cursor: pointer;
+  background: 0;
+  border: 0;
+}
+
+code {
+  display: block;
+  background: var(--grey-100);
+  font-family: monospace;
+  white-space: pre;
+  max-width: 100%;
+  overflow-x: auto;
+  padding: var(--main-spacing);
+}
+
+/* set custom heading font sizes */
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1.25rem; }
+h5 { font-size: 1rem; }
+h6 { font-size: 0.75rem; }
+
+/* Lists */
+ol,
+ul {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--main-spacing) / 2);
+}
+ol li,
+ul li { padding-left: 1em; }
+ol li { list-style: decimal inside; }
+ul li { list-style: inside; }
+
+svg {
+  fill: var(--light);
+}
+
+
+/* Custom Classes ----------------------------------------------------------- */
+.wrapper {
+  max-width: var(--page-width);
+  margin: auto;
+  padding: 0 var(--main-spacing);
+}
+
+
+/* Header ------------------------------------------------------------------- */
+header {
+  background: var(--grey-600);
+  color: var(--light);
+}
+header .wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--main-spacing);
+}
+
+header nav {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+header nav a { color: var(--light); }
+
+#header-title {
+  font-size: 1.25em;
+  font-weight: bold;
+}
+#header-title ~ * { display: none; }
+
+#main-nav { align-items: flex-end; }
+
+#hamburger {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#hamburger:hover svg { fill: var(--blue-600); }
+#hamburger ~ * { display: none; }
+
+.hamburger-x { display: none; }
+
+header.active #header-title ~ * { display: block; }
+header.active .hamburger-bars { display: none; }
+header.active .hamburger-x { display: block; }
+header.active #hamburger ~ * { display: block; }
+
+
+/* Footer ------------------------------------------------------------------- */
+footer {
+  background: var(--grey-600);
+  color: var(--light);
+}
+footer .wrapper {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: var(--main-spacing);
+  justify-content: center;
+  padding: var(--main-spacing);
+  text-align: center;
+}
+
+footer nav {
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--main-spacing);
+}
+
+@media (min-width: 1000px) {
+  footer .wrapper {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+/* Main --------------------------------------------------------------------- */
+main {
+  padding: var(--main-spacing) 0;
+}

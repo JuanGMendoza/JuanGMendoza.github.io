@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Blog | Juan Gonzalez De Mendoza</title>
+    <meta name="description" content="Juan Gonzalez De Mendoza's Blog Posts" />
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ffffff" />
+
+    <link rel="stylesheet" type="text/css" href="/main.css">
+    <link rel="stylesheet" type="text/css" href="index.css">
+  </head>
+  <body>
+    <script src="/includes/header.js"></script>
+
+    <main id="blog">
+      <div class="wrapper">
+
+        <h1>Blog Posts</h1>
+        <hr  />
+
+        <article>
+          <div class="article-text">
+            <section class="article-overview">
+              <span id="{YYYYMMDD-template_post}" class="article-anchor"></span>
+              <h2>{Template Post Title}</h2>
+              <span class="article-date">{Template Post Date}</span>
+            </section>
+            <!-- !!! -->
+            <b style="color:red;">Your blog post tags go here!</b>
+            <p style="color:red;">
+              Read the two example posts below for more thorough details, and
+              see the HTML comment here for a general example.
+            </p>
+            <!--
+              <h3>Section 1</h3>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Odio
+                eu feugiat pretium nibh ipsum. Erat pellentesque adipiscing
+                commodo elit at. Tellus pellentesque eu tincidunt tortor aliquam
+                nulla.
+              </p>
+            -->
+            <!-- !!! -->
+          </div>
+          <aside>
+            <b>{Template Post Sidebar}</b>
+            <p>
+              {Sidebar is optional.}
+            </p>
+            <a href="#">{Template Sidebar Link}</a>
+          </aside>
+        </article>
+
+        <article>
+          <div class="article-text">
+
+            <!-- overiview element -->
+            <section class="article-overview">
+              <span id="20230112-blog_design_intro" class="article-anchor"></span>
+              <h2>Blog Design Intro</h2>
+              <span class="article-date">January 12th, 2023</span>
+            </section>
+
+            <p>
+              Hello! This is the new blog page design. All blog posts are on
+              this one page, as opposed to each post having a separate page.
+            </p>
+            <h3>HTML Layout</h3>
+            <p>
+              The HTML of this page is relatively simple.
+              The <b>&lt;body&gt;</b> tag of this page is laid out as follows:
+            </p>
+            <code>
+&lt;!-- Blog Page &lt;body&gt; tag's HTML Layout --&gt;
+
+&lt;body&gt;
+    &lt;header&gt;...&lt;/header&gt;
+
+      &lt;main id="blog"&gt;
+        &lt;div class="wrapper"&gt;
+
+            &lt;article&gt;...&lt;/article&gt;  &lt;!-- Blog Post --&gt;
+            &lt;article&gt;...&lt;/article&gt;  &lt;!-- Blog Post --&gt;
+            ...
+            &lt;article&gt;...&lt;/article&gt;  &lt;!-- Blog Post --&gt;
+
+        &lt;/div&gt;
+    &lt;/main&gt;
+
+    &lt;footer&gt;...&lt;/footer&gt;
+&lt;/body&gt;
+            </code>
+            <p>
+              Within the &lt;main id="blog"&gt; tag, you will notice a
+              &lt;div class="wrapper"&gt; tag. This tag is used to center the
+              page content on the screen with a maximum width set in the CSS.
+              It also adds white space between each blog post entry.
+              Technically, this tag is optional. However, it makes the layout
+              look polished.
+            </p>
+            <p>
+              Each Blog Post on the Blog page is contained within an
+              <b>&lt;article&gt;</b> element. These article elements are laid
+              out as follows:
+            </p>
+            <code>
+&lt;!-- Blog Page &lt;article&gt; tag's HTML Layout --&gt;
+
+&lt;article&gt;
+
+  &lt;div class="article-text"&gt;
+    &lt;section class="article-overview"&gt;...&lt;/section&gt;
+    ...  &lt;!-- actual blog post content goes here --&gt;
+  &lt;/div&gt;
+
+  &lt;aside&gt;...&lt;/aside&gt;
+
+&lt;/article&gt;
+            </code>
+            <p>
+              The article has a &lt;div class="article-text"&gt; and an optional
+              &lt;aside&gt; sidebar element as direct children. Each article can
+              have its own sidebar, as opposed to 1 page-wide sidebar. The
+              sidebar lies below its article on mobile screens, and to the right
+              on desktop. Excluding the sidebar just leaves that space empty on
+              desktop screens, with no noticeable effect on mobile.
+            </p>
+            <p>
+              Apart from the tags you will use to create your blog posts, the
+              &lt;div class="article-text"&gt; tag has one direct child tag:
+              <b>&lt;section class="article-overview"&gt;</b>, which is laid
+              out as follows;
+            </p>
+            <code>
+&lt;!-- Blog Page &lt;section class="article-overview"&gt; tag's HTML Layout --&gt;
+
+&lt;section class="article-overview"&gt;
+  &lt;span id="{YYYYMMDD-blog_post_title}" class="article-anchor"&gt;&lt;span&gt;
+  &lt;h2&gt;{Blog Post Title}&lt;/h2&gt;
+  &lt;span class="article-date"&gt;{Blog Post Date}&lt;span"&gt;
+&lt;/section&gt;
+            </code>
+            <p>
+              Within the &lt;section class="article-overview"&gt; are the three
+              following child tags:
+            </p>
+            <ol>
+              <li>
+                The article anchor, which is used as an anchor link for
+                each blog post. It should have a unique id from all other blog
+                posts so that it can be properly linked to. I used the
+                "YYYYMMDD-blog_post_title" naming scheme to avoid most collisions.
+              </li>
+              <li>
+                The article title, which should be an &lt;h2&gt; tag. All titles
+                and subtitles within your blog post should be &lt;h3&gt; through
+                &lt;h6&gt;.
+                <i>(Note: if your blog posts were each on their own page, the
+                title would be an &lt;h1&gt; tag and the titles and
+                subtitles within the post would be &lt;h2&gt; through
+                &lt;h6&gt;. This is because you should only have one &lt;h1&gt;
+                tag per page. With all posts on one page, we should keep their
+                titles as &lt;h2&gt; tags.)</i>
+              </li>
+              <li>
+                The article date, which is given a grey hue in the CSS to
+                distinguish it from the title.
+              </li>
+            </ol>
+            <p>
+              After the article overview, you can add whatever combination of
+              tags you need to <b>create your blog post</b>. This is pretty bare
+              bones, so if anything ends up not being accounted for, let me
+              know. The next article will discuss a few different supported
+              tags.
+            </p>
+          </div>
+        </article>
+
+        <article>
+          <div class="article-text">
+
+            <section class="article-overview">
+              <span id="20230112-blog_post_tags" class="article-anchor"></span>
+              <h2>Blog Post Tags</h2>
+              <span class="article-date">January 12th, 2023</span>
+            </section>
+
+            <p>
+              All tags that are direct children of the blog post's
+              &lt;div class="article-text"&gt; tag have added space between
+              them to space out the content.
+            </p>
+
+            <h3>Text Wrappers</h3>
+            <p>
+              This text is wrapped in a &lt;p&gt; "paragraph" tag, which keeps
+              all default CSS styles.
+            </p>
+            <span>
+              This text is wrapped in a &lt;span&gt; tag, which has no semantic
+              meaning.
+            </span>
+            <b>
+              This text is wrapped in a &lt;b&gt; "bold" tag.
+            </b>
+            <strong>
+              This text is wrapped in a &lt;strong&gt; "strong" tag.
+            </strong>
+            <i>
+              This text is wrapped in a &lt;i&gt; "italic" tag.
+            </i>
+            <em>
+              This text is wrapped in a &lt;em&gt; "emphasis" tag.
+            </em>
+
+            <h3>Lists</h3>
+            <p>
+              Ordered Lists and Unordered Lists are set to be slightly indented
+              relative to the rest of the text, with some space between each
+              List Entry. For example:
+            </p>
+            <ol>
+              <li>This is an ordered list.</li>
+              <li>It has three entries.</li>
+              <li>It is slightly indented from the rest of the HTML.</li>
+            </ol>
+            <ul>
+              <li>This is an unordered list.</li>
+              <li>It is also slightly indented from the rest of the HTML.</li>
+            </ul>
+
+            <h3>Code Snippets</h3>
+            <p>
+              As demonstrated in this article, you can add code snippets to your
+              blog posts using the &lt;code&gt; tag. If you've looked at the
+              HTML, you'll notice that the text within this tag must be
+              completely unindented relative to the rest of the HTML. This is
+              because the code tag is set to respect exact indentation and line
+              breaks within the CSS. Thus, if you indent the text within this
+              tag to align with the rest of your HTML, it will show those
+              indentations in the code snippet shown to the user.
+            </p>
+
+            <h3>Headings</h3>
+            <p>
+              The headings' font size is slightly increased from its default
+              values in the CSS. In order to not break the semantic meaning of
+              the page by placing an &lt;h1&gt; tag in the middle of the page
+              and an &lt;h2&gt; tag in the middle of an article, here is a photo
+              of the different heading sizes relative to one another:
+            </p>
+            <img src="./assets/20230112-blog_post_tags/headings.png" alt="Blog Post Headings" />
+
+            <!-- Images -->
+            <h3>Images</h3>
+            <p>
+              By default, images will take on their actual file width. However,
+              if they are too large, they will simply scale down to 100% width of
+              the article.
+            </p>
+            <!-- Medium Image -->
+            <img src="./assets/20230112-blog_post_tags/article-image.webp" alt="Article Image" />
+            <p>
+              The image above will likely fill the entire screen width on mobile
+              devices, and have white space on either side for desktop devices.
+            </p>
+            <!-- Small Image -->
+            <img src="./assets/20230112-blog_post_tags/article-image-300x200.png" alt="Smaller Article Image" />
+            <p>
+              The image above shows how smaller images will still center
+              themselves, but will only ever be as large as their actual file
+              size.
+            </p>
+            <!-- Figures -->
+            <figure>
+              <img src="./assets/20230112-blog_post_tags/graph-example.jpg" alt="Figure Graph Image Example" />
+              <figcaption>Numbors Make Kewl Graffs</figcaption>
+            </figure>
+            <p>
+              As shown above, you can also use an HTML &lt;figure&gt; tag with
+              &lt;img&gt; and &lt;figcaption&gt; tags as direct children to have
+              an image with italicized text below it. This is great if you'd like
+              to add a graph image with explanation text below it, but can be used
+              with any image you'd like to add a caption to.
+            </p>
+
+          </div>  <!-- ./article-text -->
+
+          <aside>
+            <b>This sidebar is optional.</b>
+            <p>
+              You can put text here if you want.
+              You can also put lil images to spruce things up, as shown below.
+            </p>
+            <img src="./assets/20230112-blog_post_tags/sidebar-img.png" alt="/Blog Post 1 Sidebar Image" />
+            <p>
+              You can even put links here. This could be a good area for links
+              that are supplementary to the blog post.
+            </p>
+            <a href="https://www.youtube.com/watch?v=xvFZjo5PgG0">Very Related Link</a>
+          </aside>
+
+        </article>
+
+      </div>
+    </main>
+
+    <script src="/includes/footer.js"></script>
+  </body>
+</html>
