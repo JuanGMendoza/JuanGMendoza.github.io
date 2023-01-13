@@ -34,4 +34,6 @@ This folder contains a template "header.js" and "footer.js" file which is used o
 
 To update the header or footer on every single website page in a single step, you need only update the corresponding file in this directory.
 
-There is also a "blogpost_breadcrumbs.js" file in this directory for use on all blog posts. Since the "breadcrumbs" element will be copy/pasted on every blog post, having it templated allows for easier changes down the road.
+There is also a "social_media_card.js" file, which is used to inject code into the HTML "head" tag. This file defines the special details that appear when you paste a link to your website on social media website (i.e. an image and description).
+
+Finally, there is a "blogpost_breadcrumbs.js" file in this directory for use on all blog posts. Since the "breadcrumbs" element will be copy/pasted on every blog post, having it templated allows for easier changes down the road.
