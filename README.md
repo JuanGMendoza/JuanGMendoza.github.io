@@ -25,8 +25,12 @@ Within some page directories, a supplementary CSS file called "index.css" is use
 Within the writings directory, each blog post (or any other entry) should have its own sub-directory, containing any necessary assets linked to within the article. The "YYYYMMDD-template" directory provides the template HTML file that should be used for each blog post.
 
 ## Includes Directory
-Within the root directory, there is one special sub-directory named "includes". This folder contains a template "header" and "footer" JavaScript file which is used on all website HTML pages. Since these two components are prone to frequent updates, injecting them into the pages with a "script" tag makes the website more maintainable by preventing required copy/pastes on every HTML page when one of these components is updated.
+Within the root directory, there is one special sub-directory named "includes". This folder contains JavaScript code used to inject major HTML components into webpages.
+
+This folder contains a template "header.js" and "footer.js" file which is used on all website HTML pages. Since the "header" and "footer" HTML components are prone to frequent updates, injecting them into the pages with a "script" tag makes the website more maintainable by preventing required copy/pastes on every HTML page when one of these components is updated.
 
 To update the header or footer on every single website page in a single step, you need only update the corresponding file in this directory.
 
-There is also a "blogpost_breadcrumbs" JavaScript file in this directory for use on all blog posts. Since this element will be pasted on every blog post, having it templated allows for easier changes down the road.
+There is also a "social_media_card.js" file, which is used to inject code into the HTML "head" tag. This file defines the special details that appear when you paste a link to your website on social media website (i.e. an image and description).
+
+Finally, there is a "blogpost_breadcrumbs.js" file in this directory for use on all blog posts. Since the "breadcrumbs" element will be copy/pasted on every blog post, having it templated allows for easier changes down the road.

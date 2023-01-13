@@ -21,8 +21,75 @@
         </section>
         <h1>Writings</h1>
 
+        <!-- ↓↓↓ remove me or comment me out ↓↓↓ -->
+        <h2>Writings Page Info</h2>
+        <p>
+          You can mix and match grid-style links and list-style links on this
+          page. Title images are not required for grid-style links, but they
+          make things look cooler.
+        </p>
+        <p>
+          To add a new section of links, you can create an &lt;h2&gt; tag with
+          your section title, then a div with either class="grid" or
+          class="blogs-list". For each new article entry in this section, create
+          an &lt;article&gt; tag within the div (see examples below).
+        </p>
+        <i>
+          Note: Having paragraphs of explanation text before each section is
+          totally optional. You can just alternate between &lt;h2&gt; and
+          &lt;div class="grid/blog-list"&gt; to make sections, or even just have
+          one big &lt;div class="grid/blog-list"&gt; for all articles on the
+          page.
+        </i>
+        <p>
+          The following section demonstrates a <b>Grid-Style</b> section of
+          articles, and the section after that demonstrates a <b>List-Style</b>
+          section of articles.
+          The blog post articles in the following section also explain the
+          <b>Blog Post HTML Template</b>.
+        </p>
+        <div class="grid">
+          <article>
+            <a href="./20230112-blog_design_intro/">
+              <img src="./20230112-blog_design_intro/title-card.png" alt="Blog Post Design Intro Title Card" />
+            </a>
+            <h3>
+              <a href="./20230112-blog_design_intro/">1. Blog Post Intro</a>
+            </h3>
+            <span class="date-text">January 12th, 2023</span>
+            <p>
+              Introduction to the blog post directory structure and HTML layout.
+            </p>
+          </article>
+          <article>
+            <a href="./20230113-blog_post_tags/">
+              <img src="./20230113-blog_post_tags/title-card.png" alt="Blog Post Tags Title Card" />
+            </a>
+            <h3>
+              <a href="./20230113-blog_post_tags/">2. Blog Post Tags</a>
+            </h3>
+            <span class="date-text">January 13th, 2023</span>
+            <p>
+              Here is some description text instead of having the title image.
+            </p>
+          </article>
+          <article>
+            <a href="./YYYYMMDD-template/">
+              <img src="./YYYYMMDD-template/title-card1.png" alt="Template Title Card" />
+            </a>
+            <h3>
+              <a href="./YYYYMMDD-template/">{Blog Post Template}</a>
+            </h3>
+            <p>
+              Blog post template HTML that can be copy/pasted to create new blog
+              posts.
+            </p>
+          </article>
+        </div>
+        <!-- ↑↑↑ remove me or comment me out ↑↑↑ -->
+
         <h2>Physics Papers</h2>
-        <section class="blogs-list">
+        <div class="blogs-list">
           <h3>Miscellaneous</h3>
           <article>
             <h4>
@@ -55,45 +122,23 @@
             </h4>
             <span class="date-text">March 1st, 2019</span>
           </article>
-
-
-        </section>
+        </div>
 
         <h2>Blog Posts</h2>
-        <section class="grid">
+        <div class="grid">
           <article>
-            <img src="./20230113-blog_design_intro/title-card.png" alt="Blog Post Design Intro Title Card" />
+            <a href="./20200909-fall_semester_start/">
+              <img src="./20200909-fall_semester_start/title-card.png" alt="Fall Semester Start Title Card" />
+            </a>
             <h3>
-              <a href="./20230113-blog_design_intro/">Blog Redesign Intro</a>
+              <a href="./20200909-fall_semester_start/">2020 Fall Semester Start</a>
             </h3>
-            <span class="date-text">January 12th, 2023</span>
+            <span class="date-text">September 9th, 2020</span>
             <p>
-              Introduction to the blog post directory structure and HTML layout.
+              Reflections on the 2020 Fall Semester so far.
             </p>
           </article>
-
-          <article>
-            <img src="./20230113-blog_post_tags/title-card.png" alt="Blog Post Tags Title Card" />
-            <h3>
-              <a href="./20230113-blog_post_tags/">Blog Post Tags</a>
-            </h3>
-            <span class="date-text">January 12th, 2023</span>
-            <p>
-              Here is some description text instead of having the title image.
-            </p>
-          </article>
-
-          <article>
-            <img src="./YYYYMMDD-template/title-card.png" alt="Template Title Card" />
-            <h3>
-              <a href="./YYYYMMDD-template/">Blog Post Template</a>
-            </h3>
-            <p>
-              Blog post template HTML that can be copy/pasted to create new blog
-              posts.
-            </p>
-          </article>
-        </section>
+        </div>
 
       </div>
     </main>
