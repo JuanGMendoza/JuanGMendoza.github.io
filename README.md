@@ -1,8 +1,7 @@
 # juangmendoza.github.io
 
 ## TODO:
-- [ ] Sort "[unused]" Directory
-- [ ] Remove Unused Assets within all pages.
+- [ ] Clean out "_unused" Directory
 - [ ] Code Cleanup and Polish
 
 
