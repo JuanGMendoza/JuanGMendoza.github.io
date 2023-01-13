@@ -1,0 +1,52 @@
+@media (max-width: 1000px) {
+  #resume :not(#overview) .flex:not(:last-child) {
+    border-bottom: 1px dashed var(--grey-200);
+    flex-direction: column;
+    padding-bottom: var(--main-spacing);
+  }
+}
+
+#resume article,
+#resume article section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--main-spacing);
+}
+
+#resume article {
+  background: var(--light);
+  box-shadow: 0 0 3px var(--grey-500);
+  margin: auto;
+  max-width: 950px;
+  padding: calc(var(--main-spacing) * 2);
+  width: 100%;
+}
+#resume article section:not(:last-child) {
+  border-bottom: 3px solid var(--grey-200);
+  padding-bottom: var(--main-spacing);
+}
+
+
+#overview {
+  color: var(--grey-500);
+  text-align: center;
+}
+#overview .flex {
+  justify-content: center;
+}
+
+
+#education {
+  display: flex;
+  flex-direction: column;
+  gap: var(--main-spacing);
+}
+
+#education .flex,
+.experience .flex,
+#affiliations .flex,
+#awards .flex {
+  justify-content: space-between;
+}
+
+#awards img { margin: auto; }

@@ -4,7 +4,9 @@ document.write(`
     <div class="wrapper">
 
       <nav>
-        <a id="header-title" href="/">Juan Gonzalez De Mendoza</a>
+        <a id="header-title" href="/">
+          <img src="/icon.png" alt="JGM" />
+        </a>
         <a href="https://github.com/JuanGMendoza">GitHub</a>
         <a href="https://www.youtube.com/channel/UC560ZaRh8BrtR00J4dH7PgA">YouTube</a>
         <a href="mailto:JuanGMendoza@utexas.edu">JuanGMendoza@utexas.edu</a>

@@ -1,15 +1,3 @@
-#blog img {
-  border-radius: var(--border-radius);
-  max-width: 100%;
-}
-
-/* Blog Page Wrapper */
-#blog .wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: var(--main-spacing);
-}
-#blog .wrapper h1,
 #blog .wrapper .blogs-grid,
 #blog .wrapper .blogs-list {
   border-bottom: 3px solid var(--grey-400);
@@ -21,7 +9,6 @@
   display: grid;
   gap: var(--main-spacing);
   grid-template-columns: repeat( auto-fit, minmax( min(20em, 100%), 1fr) );
-  /* align-items: start; */
 }
 
 .blogs-grid article {
@@ -30,14 +17,9 @@
   background: var(--grey-100);
   border-radius: var(--border-radius);
   padding: var(--main-spacing);
-
   display: flex;
   flex-direction: column;
   gap: calc(var(--main-spacing) / 2);
-}
-
-.blogs-grid article a.btn {
-  align-self: flex-start;
 }
 
 
@@ -55,17 +37,14 @@
 /* Blog Posts -------------------------------------------------------------- */
 
 /* Blog Post Layout */
-/* mobile is a column, with sidebar below article text */
-#blogpost .wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: calc(var(--main-spacing) * 2);
-}
-/* desktop is a row, with sidebar to the right of article text */
+/*
+  The mobile layout is a column, with sidebar below article text (uses defaults
+  from "/main.css"), whereas the desktop layout is a row, with sidebar to the
+  right of article text (set below)
+*/
 @media (min-width: 1000px) {
   #blogpost .wrapper {
     flex-direction: row;
-    align-items: flex-start;
   }
   #blogpost article { width: 75%; }
   #blogpost aside { width: 25%; }
@@ -81,16 +60,6 @@
 /* images */
 #blogpost img {
   align-self: center;
-  max-width: 100%;
-}
-/* figures - images with captions */
-#blogpost figure {
-  padding: var(--main-spacing);
-  text-align: center;
-}
-#blogpost figure figcaption {
-  font-style: italic;
-  color: var(--grey-500);
 }
 
 
