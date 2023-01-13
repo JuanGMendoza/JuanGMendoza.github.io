@@ -92,7 +92,7 @@ h4 { font-size: 1.25rem; }
 h5 { font-size: 1rem; }
 h6 { font-size: 0.75rem; }
 /* reduce default line height */
-h1, h2, h3, h4, h5, h6, { line-height: 1.25em; }
+h1, h2, h3, h4, h5, h6 { line-height: 1.25em; }
 
 /* Images and Videos */
 img,
@@ -243,7 +243,7 @@ header {
 }
 
 /*
-  Wrapper layout changes between active and inactive states:
+  Mobile header layout changes between active and inactive states:
     inactive:
       - nav is hidden
       - icon image and hamburger button on opposite sides
@@ -271,7 +271,7 @@ header #hamburger { grid-area: hamburger; }
 header nav { grid-area: nav; }
 
 
-/* Reset main.css default line-height - prevents extra white-space */
+/* Unset default line-height - prevents extra white-space */
 header #header-title,
 header #hamburger { line-height: 0; }
 
@@ -331,6 +331,7 @@ header.active .hamburger-x { display: block; }
   }
 }
 
+
 /* Footer ------------------------------------------------------------------- */
 footer {
   background: var(--grey-600);
@@ -360,13 +361,12 @@ footer a {
   align-items: center;
   font-size: 0.75em;
 }
-footer a:hover { color: var(--blue-400); }
-
-footer svg {
+footer a svg {
   --size: 30px;
   width: var(--size);
   height: var(--size);
 }
+footer a:hover { color: var(--blue-400); }
 footer a:hover svg { fill: var(--blue-400); }
 
 
