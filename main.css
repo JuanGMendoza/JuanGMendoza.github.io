@@ -270,9 +270,19 @@ header #header-title { grid-area: title; }
 header #hamburger { grid-area: hamburger; }
 header nav { grid-area: nav; }
 
+
 /* Reset main.css default line-height - prevents extra white-space */
 header #header-title,
 header #hamburger { line-height: 0; }
+
+/* Set custom size for title image and hamburger svg */
+header #header-title img,
+#hamburger svg {
+  --size: 40px;
+  width: var(--size);
+  height: var(--size);
+}
+
 
 /* Title Icon Image */
 #header-title img { border-radius: 50%; }
@@ -289,10 +299,6 @@ header nav a { color: var(--light); }
 
 
 /* Hamburger Button */
-#hamburger svg {
-  width: 35px;
-  height: 35px;
-}
 #hamburger:hover svg {
   fill: var(--blue-600);
 }
