@@ -24,11 +24,11 @@ Note that the homepage is found at the root of the project in "index.html". To p
 
 This is the only page whose assets and page-specific CSS are in a separate location from the HTML file.
 
-## Writings Directory
+## "writings" Directory
 Within the writings directory, each blog post (or any other entry) should have its own sub-directory, containing any necessary assets linked to within the article. The "YYYYMMDD-template" directory provides the template HTML file that should be used for each blog post.
 
-## Includes Directory
-Within the root directory, there is one special sub-directory named "includes". This folder contains JavaScript code used to inject major HTML components into webpages.
+## "_includes" Directory
+Within the root directory, there is one special sub-directory named "_includes". This folder contains JavaScript code used to inject major HTML components into webpages.
 
 This folder contains a template "header.js" and "footer.js" file which is used on all website HTML pages. Since the "header" and "footer" HTML components are prone to frequent updates, injecting them into the pages with a "script" tag makes the website more maintainable by preventing required copy/pastes on every HTML page when one of these components is updated.
 
