@@ -1,9 +1,5 @@
 # juangmendoza.github.io
 
-## TODO:
-- [ ] Clean out "_unused" Directory
-- [ ] Code Cleanup and Polish
-
 
 ## Directory Structure
 The root directory is structured so that each website page is nested within its own directory, and its HTML file is named "index.html". This is useful because it formats your links based on its location in the project and removes the HTML extension.
