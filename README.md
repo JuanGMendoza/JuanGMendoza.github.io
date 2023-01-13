@@ -19,6 +19,11 @@ There is a main CSS file called "main.css" at the root directory of the project.
 
 Within some page directories, a supplementary CSS file called "index.css" is used to extend "main.css" or add styles that are only used on that page. These pages will link to both files in the "head" tag of their HTML.
 
+## Homepage
+Note that the homepage is found at the root of the project in "index.html". To prevent cluttering up the root directory, the homepage assets (images and page-specific CSS) are placed in a directory named "home".
+
+This is the only page whose assets and page-specific CSS are in a separate location from the HTML file.
+
 ## Writings Directory
 Within the writings directory, each blog post (or any other entry) should have its own sub-directory, containing any necessary assets linked to within the article. The "YYYYMMDD-template" directory provides the template HTML file that should be used for each blog post.
 
