@@ -11,17 +11,6 @@
 }
 
 
-/* Blog Post Custom Tags */
-/* rounded corners on code snippets and images */
-#blogpost code,
-#blogpost img {
-  border-radius: var(--border-radius);
-}
-/* images */
-#blogpost img {
-  align-self: center;
-}
-
 /* Blog Post Article */
 #blogpost article {
   display: flex;
