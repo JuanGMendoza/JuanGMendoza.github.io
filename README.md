@@ -1,8 +1,6 @@
 # juangmendoza.github.io
 
 ## TODO:
-- [ ] Standardize "Research" Page
-- [ ] Standardize "Writings" Page
 - [ ] Sort "[unused]" Directory
 - [ ] Remove Unused Assets within all pages.
 - [ ] Code Cleanup and Polish
