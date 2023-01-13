@@ -1,9 +1,9 @@
-#blog .wrapper > .grid,
-#blog .wrapper > .blogs-list {
+#writings .wrapper > .grid,
+#writings .wrapper > .blogs-list {
   border-bottom: 3px solid var(--grey-400);
   padding-bottom: var(--main-spacing);
 }
-#blog .wrapper > *:last-child { border-bottom: 0; }
+#writings .wrapper > *:last-child { border-bottom: 0; }
 
 .blogs-list {
   display: flex;

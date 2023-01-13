@@ -218,41 +218,81 @@ header {
   background: var(--grey-600);
   color: var(--light);
 }
+
+/*
+  Wrapper layout changes between active and inactive states:
+    inactive:
+      - nav is hidden
+      - icon image and hamburger button on opposite sides
+    active:
+      - nav is visible, and displays below icon image and hamburger button
+*/
 header .wrapper {
   display: flex;
+  gap: var(--main-spacing);
+  padding-top: calc(var(--main-spacing) / 2);
+  padding-bottom: calc(var(--main-spacing) / 2);
   justify-content: space-between;
-  padding: var(--main-spacing);
+  align-items: flex-start;
 }
+header.active .wrapper {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-areas:
+    "title hamburger"
+    "nav nav";
+}
+/* define grid template areas */
+header #header-title { grid-area: title; }
+header #hamburger { grid-area: hamburger; }
+header nav { grid-area: nav; }
 
+/* Reset main.css default line-height - prevents extra white-space */
+header #header-title,
+header #hamburger { line-height: 0; }
+
+/* Title Icon Image */
+#header-title img { border-radius: 50%; }
+
+/* Nav Links */
 header nav {
-  display: flex;
+  display: none;
   flex-direction: column;
-  gap: 16px;
+  gap: var(--main-spacing);
+  padding-bottom: var(--main-spacing);
 }
+header.active nav { display: flex; }
 header nav a { color: var(--light); }
 
-#header-title { line-height: 0; }
-#header-title ~ * { display: none; }
 
-#main-nav { align-items: flex-end; }
-
-#hamburger {
-  width: 30px;
-  height: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+/* Hamburger Button */
+#hamburger svg {
+  width: 35px;
+  height: 35px;
 }
-#hamburger:hover svg { fill: var(--blue-600); }
-#hamburger ~ * { display: none; }
-
-.hamburger-x { display: none; }
-
-header.active #header-title ~ * { display: block; }
+#hamburger:hover svg {
+  fill: var(--blue-600);
+}
+/* toggle hamburger "bars" svg with "x" svg */
+header .hamburger-x { display: none; }
 header.active .hamburger-bars { display: none; }
 header.active .hamburger-x { display: block; }
-header.active #hamburger ~ * { display: block; }
 
+
+/* Desktop Header Layout - No Hamburger Menu, Nav Always Displayed */
+@media (min-width: 1000px) {
+  /* all elements on same row */
+  header.active .wrapper { display: flex; }
+  /* no hamburger */
+  #hamburger { display: none; }
+  /* nav links on one line */
+  header nav {
+    display: flex;
+    align-self: center;
+    flex-direction: row;
+    padding-bottom: 0;
+  }
+}
 
 /* Footer ------------------------------------------------------------------- */
 footer {

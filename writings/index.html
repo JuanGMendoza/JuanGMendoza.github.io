@@ -1,47 +1,103 @@
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<HTML><HEAD><TITLE>Writings</TITLE><link rel="icon" href="Media/icon.png">
-<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-</HEAD>
-<div id="nav-placeholder">
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Writings | Juan Gonzalez De Mendoza</title>
+    <meta name="description" content="Juan Gonzalez De Mendoza's Writings" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="icon" href="/icon.png">
+    <link rel="stylesheet" type="text/css" href="/main.css">
+    <link rel="stylesheet" type="text/css" href="/writings/index.css">
+    <script src="/includes/social_media_card.js"></script>
+  </head>
+  <body>
+    <script src="/includes/header.js"></script>
 
-</div>
+    <main id="writings">
+      <div class="wrapper">
+        <section id="breadcrumbs">
+          <a href="/">Home</a>/
+        </section>
+        <h1>Writings</h1>
 
-<TABLE cellSpacing=10>
-  <TBODY>
-  <TR border="0">
-    <TD vAlign=bottom border="0"><FONT face=Arial size=+3>Writings</FONT><IMG src="https://www.scottaaronson.com/100.jpg" >
+        <h2>Physics Papers</h2>
+        <section class="blogs-list">
+          <h3>Miscellaneous</h3>
+          <article>
+            <h4>
+              <a href="./20190400-vaidmans_bomb/Vaidman_s_Bomb.pdf">Elitzur-Vaidman's Bomb summary and its consequences</a>
+            </h4>
+            <span class="date-text">April 2019</span>
+          </article>
+          <h3>Modern Physics Experiments</h3>
+          <article>
+            <h4>
+              <a href="./20190400-speed_of_light/Speed_of_Light.pdf">Measuring the speed of light with rotating mirrors</a>
+            </h4>
+            <span class="date-text">April 2019</span>
+          </article>
+          <article>
+            <h4>
+              <a href="./20190402-electron_diffraction/Electron_Diffraction.pdf">The Wave Nature of Electrons</a>
+            </h4>
+            <span class="date-text">April 2nd, 2019</span>
+          </article>
+          <article>
+            <h4>
+              <a href="./20190314-photoelectric_effect/Photoelectric_Effect.pdf">The Photoelectric Effect</a>
+            </h4>
+            <span class="date-text">March 14th, 2019</span>
+          </article>
+          <article>
+            <h4>
+              <a href="./20190301-franck_hertz/Franck_Hertz.pdf">Franck Hertz Experiment</a>
+            </h4>
+            <span class="date-text">March 1st, 2019</span>
+          </article>
 
-  <TR>
 
-    <TD width=700 border="0">
+        </section>
 
-    <h4>Physics</h4>
-    <br>
-    <h6>Misc</h6>
-    <ul>
-      
-      <li><a href="Media/Vaidman_s_Bomb.pdf">Elitzur-Vaidman's Bomb summary and its
-          consequences </a></li>
-    <br>
-    </ul>
-    <h6>Modern Physics Experiment Papers</h6>
-    <ul>
-      
-        <li><a href="Media/Speed_of_Light.pdf">Measuring the speed of light with rotating mirrors </a></li>
-        <li><a href="Media/Franck_Hertz.pdf"> Franck-Hertz Experiment</a></li>
-        <li><a href="Media/Photoelectric_Effect.pdf"> The Photoelectric Effect</a></li>
-        <li><a href="Media/Electron_Diffraction.pdf"> The Wave Nature of Electrons</a></li>
-    </ul>
-  	<h4>Blog</h4>
-  	<ul>
-  		<li><a href="blog1.html">Fall semester start 09/11/20 </a></li>
-  	</ul>
+        <h2>Blog Posts</h2>
+        <section class="grid">
+          <article>
+            <img src="./20230113-blog_design_intro/title-card.png" alt="Blog Post Design Intro Title Card" />
+            <h3>
+              <a href="./20230113-blog_design_intro/">Blog Redesign Intro</a>
+            </h3>
+            <span class="date-text">January 12th, 2023</span>
+            <p>
+              Introduction to the blog post directory structure and HTML layout.
+            </p>
+          </article>
 
+          <article>
+            <img src="./20230113-blog_post_tags/title-card.png" alt="Blog Post Tags Title Card" />
+            <h3>
+              <a href="./20230113-blog_post_tags/">Blog Post Tags</a>
+            </h3>
+            <span class="date-text">January 12th, 2023</span>
+            <p>
+              Here is some description text instead of having the title image.
+            </p>
+          </article>
 
+          <article>
+            <img src="./YYYYMMDD-template/title-card.png" alt="Template Title Card" />
+            <h3>
+              <a href="./YYYYMMDD-template/">Blog Post Template</a>
+            </h3>
+            <p>
+              Blog post template HTML that can be copy/pasted to create new blog
+              posts.
+            </p>
+          </article>
+        </section>
 
-<script>
-$(function(){
-  $("#nav-placeholder").load("./base.html");
-});
-</script>
+      </div>
+    </main>
+
+    <script src="/includes/footer.js"></script>
+  </body>
+</html>

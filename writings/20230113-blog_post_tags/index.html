@@ -3,12 +3,12 @@
   <head>
     <meta charset="utf-8">
     <title>Blog Post Tags | Juan Gonzalez De Mendoza</title>
-    <meta name="description" content="Part 2 of the introduction to the blog page and blog post template." />
+    <meta name="description" content="Part 2 of the introduction to the writings page and blog post template." />
     <meta name="theme-color" content="#ffffff" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="/icon.png">
     <link rel="stylesheet" type="text/css" href="/main.css">
-    <link rel="stylesheet" type="text/css" href="/blog/index.css">
+    <link rel="stylesheet" type="text/css" href="/writings/index.css">
     <script src="/includes/social_media_card.js"></script>
   </head>
   <body>
@@ -18,11 +18,7 @@
       <div class="wrapper">
 
         <article>
-
-          <section id="breadcrumbs">
-            <a href="/">Home</a>/
-            <a href="/blog/">Blog</a>/
-          </section>
+          <script src="/includes/blogpost_breadcrumbs.js"></script>
 
           <section id="overview">
             <h1>Blog Post Tags</h1>
@@ -30,7 +26,10 @@
           </section>
 
           <p>
-            The <a href="/blog/20230113-blog_design_intro">previous article</a>
+            The
+            <a href="/writings/20230113-blog_design_intro">
+              previous article
+            </a>
             discussed the HTML structure of blog post pages. This one discusses
             various tags that can be used in each post.
           </p>
@@ -81,11 +80,11 @@
           <h2>Code Snippets</h2>
           <p>
             As demonstrated in the
-            <a href="/blog/20230113-blog_design_intro">previous article</a>, you
-            can add code snippets to your blog posts using the &lt;code&gt; tag.
-            If you've looked at the HTML, you'll notice that the text within
-            this tag must be completely unindented relative to the rest of the
-            HTML. This is because the code tag is set to respect exact
+            <a href="/writings/20230113-blog_design_intro">previous article</a>,
+            you can add code snippets to your blog posts using the &lt;code&gt;
+            tag. If you've looked at the HTML, you'll notice that the text
+            within this tag must be completely unindented relative to the rest
+            of the HTML. This is because the code tag is set to respect exact
             indentation and line breaks within the CSS. Thus, if you indent the
             text within this tag to align with the rest of your HTML, it will
             show those indentations in the code snippet shown to the user.
@@ -144,7 +143,7 @@
             This article demonstrated the CSS behavior of various tags that can
             be used for your blog posts.
             You can find a blank blog post template
-            <a href="/blog/YYYYMMDD-template/">here</a>.
+            <a href="/writings/YYYYMMDD-template/">here</a>.
           </p>
         </article>
 
