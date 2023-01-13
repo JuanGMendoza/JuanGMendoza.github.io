@@ -7,7 +7,7 @@ The root directory is structured so that each website page is nested within its 
 For instance, the about page is located at: "/about/index.html"
 and so its public URL will be "https://juangmendoza.com/about/".
 
-Within most page directories, there is an assets folder for images, videos, PDF's, and any other files linked to by that HTML page. This better organizes assets files by keeping them grouped with the page they correspond to, and shortens pathnames within each HTML files.
+Within most page directories, there is an assets folder for images, videos, and any other files linked to by that HTML page. This better organizes media files by keeping them grouped with the page they correspond to, and shortens pathnames within each HTML file.
 
 ## CSS Files
 There is a main CSS file called "main.css" at the root directory of the project. This file contains presets (e.g. color variables), default styles, and reused styles across the project.
@@ -23,11 +23,9 @@ This is the only page whose assets and page-specific CSS are in a separate locat
 Within the writings directory, each blog post (or any other entry) should have its own sub-directory, containing any necessary assets linked to within the article. The "YYYYMMDD-template" directory provides the template HTML file that should be used for each blog post.
 
 ## "_includes" Directory
-Within the root directory, there is one special sub-directory named "_includes". This folder contains JavaScript code used to inject major HTML components into webpages.
+Within the root directory, there is one special sub-directory named "_includes". This folder contains JavaScript code used to inject frequently used HTML components into webpages.
 
-This folder contains a template "header.js" and "footer.js" file which is used on all website HTML pages. Since the "header" and "footer" HTML components are prone to frequent updates, injecting them into the pages with a "script" tag makes the website more maintainable by preventing required copy/pastes on every HTML page when one of these components is updated.
-
-To update the header or footer on every single website page in a single step, you need only update the corresponding file in this directory.
+This folder contains a template "header.js" and "footer.js" file which is used on all website HTML pages. Since the "header" and "footer" HTML components are prone to frequent updates, injecting them into the pages with a "script" tag makes the website more maintainable when one of these components needs to be updated. To update the header or footer on every single website page in a single step, you need only update its corresponding file in this directory.
 
 There is also a "social_media_card.js" file, which is used to inject code into the HTML "head" tag. This file defines the special details that appear when you paste a link to your website on social media website (i.e. an image and description).
 
