@@ -7,6 +7,9 @@
   /* colors */
   --light: #ffffff;
   --grey-100: #f5f5f5;
+  --grey-200: #b5bec7;
+  /* --grey-300: #929ca6; */
+  --grey-400: #78818a;
   --grey-500: #5e6770;
   --grey-600: #343a40;
   --blue-500: #2282e0;
@@ -42,9 +45,13 @@ a:hover {
 }
 
 body {
-  overflow-y: scroll;  /* scrollbar always active - prevents layout shift */
-  background-image:  linear-gradient(#f5f5f5 1px, transparent 1px), linear-gradient(to right, #f5f5f5 1px, #ffffff 1px);
+  /* grid background */
+  background-image:
+    linear-gradient(#f5f5f5 1px, transparent 1px),
+    linear-gradient(to right, #f5f5f5 1px, #ffffff 1px);
   background-size: 20px 20px;
+  /* scrollbar always active to prevent layout shifts */
+  overflow-y: scroll;
   /* Force footer to bottom of screen. */
   min-height: 100vh;  /* body is always at least as tall as the device screen */
   display: flex;           /* The body element aligns its direct children... */
@@ -94,6 +101,24 @@ svg {
 
 
 /* Custom Classes ----------------------------------------------------------- */
+a.btn {
+  background: var(--blue-500);
+  color: var(--light);
+  padding: 0.5em 1em;
+  border-radius: 300px;
+}
+a.btn:hover { background: var(--blue-600); }
+
+#breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+}
+
+/* blog post date text */
+.date-text { color: var(--grey-500); }
+
+/* page wrapper to center content */
 .wrapper {
   max-width: var(--page-width);
   margin: auto;
