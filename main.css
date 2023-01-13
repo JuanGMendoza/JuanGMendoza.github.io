@@ -284,6 +284,7 @@ header #header-title img,
 
 /* Title Icon Image */
 #header-title img { border-radius: 50%; }
+#header-title:hover img { filter: brightness(1.25); }
 
 /* Nav Links */
 header nav {
