@@ -1,27 +1,9 @@
-#blog .wrapper .blogs-grid,
-#blog .wrapper .blogs-list {
+#blog .wrapper > .grid,
+#blog .wrapper > .blogs-list {
   border-bottom: 3px solid var(--grey-400);
   padding-bottom: var(--main-spacing);
 }
 #blog .wrapper > *:last-child { border-bottom: 0; }
-
-.blogs-grid {
-  display: grid;
-  gap: var(--main-spacing);
-  grid-template-columns: repeat( auto-fit, minmax( min(20em, 100%), 1fr) );
-}
-
-.blogs-grid article {
-  max-width: 100%;
-  overflow: hidden;
-  background: var(--grey-100);
-  border-radius: var(--border-radius);
-  padding: var(--main-spacing);
-  display: flex;
-  flex-direction: column;
-  gap: calc(var(--main-spacing) / 2);
-}
-
 
 .blogs-list {
   display: flex;
