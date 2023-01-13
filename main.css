@@ -6,7 +6,8 @@
 * {
   /* colors */
   --light: #ffffff;
-  --grey-100: #f5f5f5;
+  /* --grey-050: #f5f5f5; */
+  --grey-100: #ededed;
   --grey-200: #dedede;
   /* --grey-300: #929ca6; */
   --grey-400: #78818a;
