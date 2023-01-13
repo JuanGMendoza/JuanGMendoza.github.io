@@ -47,6 +47,8 @@ a:hover {
 }
 
 body {
+  /* prevent any overflow from breaking layout */
+  overflow-x: hidden;
   /* grid background */
   background-image:
     linear-gradient(#f5f5f5 1px, transparent 1px),
@@ -128,6 +130,59 @@ svg { fill: var(--light); }
 
 
 /* Custom Classes ----------------------------------------------------------- */
+/* Grouped Article Layouts */
+/* Grid of Articles */
+.article-grid {
+  display: grid;
+  gap: var(--main-spacing);
+  grid-template-columns: repeat( auto-fill, minmax( min(20em, 100%), 1fr) );
+}
+/* grid article cards */
+.article-grid article {
+  max-width: 100%;
+  overflow: hidden;
+  background: var(--grey-100);
+  border-radius: var(--border-radius);
+  padding: var(--main-spacing);
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--main-spacing) / 2);
+}
+.article-grid article img {
+  aspect-ratio: 2 / 1;
+  object-fit: cover;
+  width: 100%;
+}
+.article-grid article h1,
+.article-grid article h2,
+.article-grid article h3,
+.article-grid article h4,
+.article-grid article h5,
+.article-grid article h6,
+.article-grid article a {
+  line-height: 1.25em;
+}
+
+/* List of Articles */
+.article-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--main-spacing);
+}
+.article-list article:not(:last-child) {
+  border-bottom: 3px solid var(--grey-100);
+  padding-bottom: var(--main-spacing);
+}
+
+/* Container of mixed article-grid and article-list sections */
+.article-gallery > .article-grid,
+.article-gallery > .article-list {
+  border-bottom: 3px solid var(--grey-400);
+  padding-bottom: calc(var(--main-spacing) * 2);
+}
+.article-gallery > *:last-child { border-bottom: 0; }
+
+
 #breadcrumbs {
   display: flex;
   flex-wrap: wrap;
@@ -147,38 +202,6 @@ figure.emphasized figcaption {
 .flex {
   display: flex;
   gap: var(--main-spacing);
-}
-
-/* standard grid */
-.grid {
-  display: grid;
-  gap: var(--main-spacing);
-  grid-template-columns: repeat( auto-fill, minmax( min(20em, 100%), 1fr) );
-}
-/* grid article cards */
-.grid article {
-  max-width: 100%;
-  overflow: hidden;
-  background: var(--grey-100);
-  border-radius: var(--border-radius);
-  padding: var(--main-spacing);
-  display: flex;
-  flex-direction: column;
-  gap: calc(var(--main-spacing) / 2);
-}
-.grid article img {
-  aspect-ratio: 2 / 1;
-  object-fit: cover;
-  width: 100%;
-}
-.grid article h1,
-.grid article h2,
-.grid article h3,
-.grid article h4,
-.grid article h5,
-.grid article h6,
-.grid article a {
-  line-height: 1.25em;
 }
 
 .inset-block {

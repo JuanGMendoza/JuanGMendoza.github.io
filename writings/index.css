@@ -1,21 +1,3 @@
-#writings .wrapper > .grid,
-#writings .wrapper > .blogs-list {
-  border-bottom: 3px solid var(--grey-400);
-  padding-bottom: var(--main-spacing);
-}
-#writings .wrapper > *:last-child { border-bottom: 0; }
-
-.blogs-list {
-  display: flex;
-  flex-direction: column;
-  gap: var(--main-spacing);
-}
-.blogs-list article:not(:last-child) {
-  border-bottom: 3px solid var(--grey-100);
-  padding-bottom: var(--main-spacing);
-}
-
-
 /* Blog Posts -------------------------------------------------------------- */
 
 /* Blog Post Layout */
@@ -25,9 +7,7 @@
   right of article text (set below)
 */
 @media (min-width: 1000px) {
-  #blogpost .wrapper {
-    flex-direction: row;
-  }
+  #blogpost .wrapper { flex-direction: row; }
   #blogpost article { width: 75%; }
   #blogpost aside { width: 25%; }
 }
@@ -43,7 +23,6 @@
 #blogpost img {
   align-self: center;
 }
-
 
 /* Blog Post Article */
 #blogpost article {
