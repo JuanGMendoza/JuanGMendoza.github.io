@@ -1,11 +1,20 @@
+/* Row-Style Sub-Sections */
+/* items spaced as far apart as possible */
+#resume .flex { justify-content: space-between; }
+/* add subtle border to separate them */
+#resume :not(#overview) > .flex {
+  border-top: 1px dashed var(--grey-200);
+  padding-top: var(--main-spacing);
+}
+/* on mobile, rows reflow into columns */
 @media (max-width: 1000px) {
   #resume :not(#overview) > .flex {
-    border-top: 1px dashed var(--grey-200);
     flex-direction: column;
-    padding-top: var(--main-spacing);
   }
 }
 
+
+/* Resume Main Content Area */
 #resume article,
 #resume article section {
   display: flex;
@@ -31,6 +40,7 @@
   color: var(--grey-500);
   text-align: center;
 }
+/* center overview flex items */
 #overview .flex {
   justify-content: center;
 }
@@ -40,13 +50,6 @@
   display: flex;
   flex-direction: column;
   gap: var(--main-spacing);
-}
-
-#education .flex,
-.experience .flex,
-#affiliations .flex,
-#awards .flex {
-  justify-content: space-between;
 }
 
 #awards img { margin: auto; }
