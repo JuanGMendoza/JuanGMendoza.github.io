@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Blog Template Intro | Juan Gonzalez De Mendoza</title>
+    <title>Blog Design Intro | Juan Gonzalez De Mendoza</title>
     <meta name="description" content="Introduction to the writings page and blog post template." />
     <meta name="theme-color" content="#ffffff" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -41,7 +41,7 @@
             link without mentioning the HTML file by name. For instance, this
             post's URL will be:
           </p>
-          <code>https://juangmendoza.com/writings/20230113-blog_design_intro/</code>
+          <code>https://juangmendoza.com/writings/20230112-blog_design_intro/</code>
           <p>
             I have used the naming scheme YYYYMMDD-{blog_post_title}.
             If you'd rather simplify the links further, you can instead name
@@ -105,10 +105,7 @@
 
 &lt;article&gt;
 
-  &lt;section id="breadcrumbs"&gt;
-    &lt;a href="/"&gt;Home&lt;a href="/"&gt;/
-    &lt;a href="/"&gt;Blog&lt;a href="/blog"&gt;/
-  &lt;/section&gt;
+  &lt;section id="breadcrumbs"&gt;...&lt;/section&gt;
 
   &lt;section id="overview"&gt;
     &lt;h1&gt;{Blog Post Title}&lt;/h1&gt;
@@ -127,9 +124,10 @@
           <ol>
             <li>
               &lt;section id="breadcrumbs"&gt; provides links to the homepage
-              and blog page, giving users a sense of where they are in the
-              website. It can be copy/pasted between all blog posts with no
-              change.
+              and writings page, giving users a sense of where they are in the
+              website. It is injected into the webpage in the same method as the
+              "header" and "footer" elements, using a script tag that links to
+              its corresponding file in the "_includes" directory.
             </li>
             <li>
               &lt;section id="overview"&gt; provides the blog post title,
