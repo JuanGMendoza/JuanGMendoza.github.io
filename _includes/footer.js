@@ -25,6 +25,13 @@ document.write(`
           Email
         </a>
       </nav>
+
+      <!-- T.Wittig Site Design Attribution -->
+      <a href="https://twit96.github.io/" id="tw-attribution">
+        <img src="https://tylerwittig.com/img/icon.png" alt="TW Icon" />
+        Design by TW
+      </a>
+
     </div>
   </footer>
 `);
