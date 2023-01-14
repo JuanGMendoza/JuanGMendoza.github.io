@@ -2,14 +2,27 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>{Blog Post Title} | Juan Gonzalez De Mendoza</title>
-    <meta name="description" content="{Blog Post Description}" />
     <meta name="theme-color" content="#ffffff" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Juan Gonzalez De Mendoza" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/icon_large.png" />
+    <meta name="twitter:card" content="summary_large_image" />
     <link rel="icon" href="/icon.png">
     <link rel="stylesheet" type="text/css" href="/main.css">
     <link rel="stylesheet" type="text/css" href="/writings/index.css">
-    <script src="/_includes/social_media_card.js"></script>
+    <!-- ↓↓↓ update these tags ↓↓↓ -->
+    <title>{Template Post Title} | Juan Gonzalez De Mendoza</title>
+    <meta property="og:title" content="{Template Post Title} | Juan Gonzalez De Mendoza"/>
+    <meta property="og:url" content="https://juangmendoza.com/writings/{YYYYMMDD-template}/" />
+    <meta name="description" content="{Template Post Description}" />
+    <meta property="og:description" content="{Template Post Description}" />
+    <!--
+      (You can update the next tag's "content" attribute
+      or leave it as is to keep the default image.)
+    -->
+    <meta property="og:image" content="/icon_large.png" />
+    <!-- ↑↑↑ update these tags ↑↑↑ -->
   </head>
   <body>
     <script src="/_includes/header.js"></script>
@@ -21,13 +34,15 @@
           <script src="/_includes/blogpost_breadcrumbs.js"></script>
 
           <section id="overview">
+            <!-- ↓↓↓ update these tags ↓↓↓ -->
             <h1>{Template Post Title}</h1>
             <span class="date-text">{Template Post Date}</span>
+            <!-- ↑↑↑ update these tags ↑↑↑ -->
           </section>
 
           <!-- ↓↓↓ replace me with your blog post content ↓↓↓ -->
           <h2 style="color:red;">Your blog post's tags go here!</h2>
-          <p>
+          <p style="color:red;">
             Read the two explainer posts
             <a href="/writings/20230112-blog_design_intro/">
               here (directory structure and layout)
@@ -35,20 +50,45 @@
             <a href="/writings/20230113-blog_post_tags/">here (tags)</a> for
             more thorough details.
           </p>
-          <p>
-            Copy this file to the directory of your new blog post, and
-            update the title and description in the HTML &lt;head&gt;
-            and the title and date in the &lt;section id="overview"&gt;
-            accordingly. Finally, replace me with your actual blog post!
+          <h2 style="color:red;">To create a new blog post with this template:</h2>
+          <ol style="color:red;">
+            <li>
+              Copy this file to the directory of your new blog post.
+            </li>
+            <li>
+              Update the marked tags in the &lt;head&gt; section at the top of
+              the file and in the &lt;section id="overview"&gt; section above.
+            </li>
+            <li>
+              Replace the tags in this area with your actual blog post content.
+            </li>
+            <li>
+              Either remove the &lt;aside&gt; tag below, or fill it with your
+              blog post's sidebar content.
+            </li>
+          </ol>
+          <hr style="border-color:red;" />
+          <p style="color:red;">
+            <b>Note</b>: all areas of the template file that need to be updated
+            are indicated with a starting HTML comment:
           </p>
+          <code style="color:red;">&lt;!-- ↓↓↓ "..." ↓↓↓ --&gt;</code>
+          <p style="color:red;">and an ending HTML comment:</p>
+          <code style="color:red;">&lt;!-- ↑↑↑ "..." ↑↑↑ --&gt;</code>
+          <p style="color:red;">
+            For tags that only need to be updated, the text that requires
+            updating is wrapped in brackets. For example:
+          </p>
+          <code style="color:red;">&lt;meta name="description" content="{Template Post Description}" /&gt;</code>
           <!-- ↑↑↑ replace me with your blog post content ↑↑↑ -->
+
         </article>
 
         <aside>
-          <!-- ↓↓↓ replace me with your blog post sidebar content ↓↓↓ -->
+          <!-- ↓↓↓ replace me with your blog post's sidebar content ↓↓↓ -->
           <b style="color:red;">Optional Sidebar</b>
           <a href="#">Fake Link</a>
-          <!-- ↑↑↑ replace me with your blog post sidebar content ↑↑↑ -->
+          <!-- ↑↑↑ replace me with your blog post's sidebar content ↑↑↑ -->
         </aside>
 
       </div>
