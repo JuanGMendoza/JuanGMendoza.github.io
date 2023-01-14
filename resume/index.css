@@ -1,8 +1,8 @@
 @media (max-width: 1000px) {
-  #resume :not(#overview) .flex:not(:last-child) {
-    border-bottom: 1px dashed var(--grey-200);
+  #resume :not(#overview) > .flex {
+    border-top: 1px dashed var(--grey-200);
     flex-direction: column;
-    padding-bottom: var(--main-spacing);
+    padding-top: var(--main-spacing);
   }
 }
 
