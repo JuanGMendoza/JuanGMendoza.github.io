@@ -28,3 +28,10 @@ Within the root directory, there is one special sub-directory named "_includes".
 This folder contains a template "header.js" and "footer.js" file which is used on all website HTML pages. Since the "header" and "footer" HTML components are prone to frequent updates, injecting them into the pages with a "script" tag makes the website more maintainable when one of these components needs to be updated. To update the header or footer on every single website page in a single step, you need only update its corresponding file in this directory.
 
 There is also a "blogpost_breadcrumbs.js" file in this directory for use on all blog posts. Since the "breadcrumbs" element will be copy/pasted on every blog post, having it templated allows for easier changes down the road.
+
+### ".nojekyll" File
+By default, GitHub pages uses a website processor called Jekyll. Jekyll ignores all files and directories beginning with underscores. Adding the ".nojekyll" file in the root directory disables this unnecessary processing.
+
+Thus, you can remove this file if the website is migrated from GitHub Pages to another platform later on.
+
+If you ever wanted to implement Jekyll, the "_includes" directory would need to be renamed without the leading underscore, and pathnames linking to its files would need to be updated across the website.
