@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Juan Gonzalez De Mendoza" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/icon_large.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="/icon.png">
+    <link rel="stylesheet" type="text/css" href="/main.css">
+    <link rel="stylesheet" type="text/css" href="/writings/index.css">
+    <title>Blog Design Intro | Juan Gonzalez De Mendoza</title>
+    <meta property="og:title" content="Blog Design Intro | Juan Gonzalez De Mendoza"/>
+    <meta property="og:url" content="https://juangmendoza.com/writings/20230112-blog_design_intro/" />
+    <meta name="description" content="Introduction to the writings page and blog post template." />
+    <meta property="og:description" content="Introduction to the writings page and blog post template." />
+  </head>
+  <body>
+    <script src="/_includes/header.js"></script>
+
+    <main id="blogpost">
+      <div class="wrapper">
+
+        <article>
+          <script src="/_includes/blogpost_breadcrumbs.js"></script>
+
+          <section id="overview">
+            <h1>Blog Design Intro</h1>
+            <span class="date-text">January 12th, 2023</span>
+          </section>
+
+          <p>
+            Hello! This is the new blog post page design.
+          </p>
+          <h2>Directory Structure</h2>
+          <p>
+            Note that each blog post lives in its own sub-directory within the
+            "writings" directory. This allows you to group all assets with its
+            blog post HTML file. This shortens pathnames for any assets you will
+            call in the HTML, and makes it easier to manage the assets.
+          </p>
+          <p>
+            Also, each blog post HTML file should be named "index.html" within
+            its directory. This allows the directory path to become the public
+            link without mentioning the HTML file by name. For instance, this
+            post's URL will be:
+          </p>
+          <code>https://juangmendoza.com/writings/20230112-blog_design_intro/</code>
+          <p>
+            I have used the naming scheme YYYYMMDD-{blog_post_title}.
+            If you'd rather simplify the links further, you can instead name
+            your blog post directories in numerical order. With that method,
+            this article's URL could instead be:
+          </p>
+          <code>https://juangmendoza.com/writings/0/</code>
+          <p>
+            ...and the next would be...
+          </p>
+          <code>https://juangmendoza.com/writings/1/</code>
+          <p>
+            Using ordered numbers has the benefit of making your URL's shorter,
+            but also makes them less descriptive. Any method works, so long as
+            each blog post directory has a unique name.
+          </p>
+          <h2>HTML Layout</h2>
+          <p>
+            The HTML of this page is relatively simple.
+            The <b>&lt;body&gt;</b> tag of this page is laid out as follows:
+          </p>
+          <code>
+&lt;!-- Blog Post Page &lt;body&gt; tag's HTML Layout --&gt;
+
+&lt;body&gt;
+  &lt;header&gt;...&lt;/header&gt;
+
+    &lt;main id="blogpost"&gt;
+      &lt;div class="wrapper"&gt;
+
+          &lt;article&gt;...&lt;/article&gt;
+          &lt;aside&gt;...&lt;/aside&gt;
+
+      &lt;/div&gt;
+  &lt;/main&gt;
+
+  &lt;footer&gt;...&lt;/footer&gt;
+&lt;/body&gt;
+          </code>
+          <p>
+            Within the &lt;main id="blogpost"&gt; tag, you will notice a
+            &lt;div class="wrapper"&gt; tag. This tag is used to center the
+            page content on the screen with a maximum width set in the CSS.
+            It also adds white space between each blog post entry.
+            Technically, this tag is optional. However, it makes the layout
+            look polished.
+          </p>
+          <p>
+            There are two element's that make up your blog posts, an
+            &lt;article&gt; element, where the main content of your blog post
+            will go, and an optional &lt;aside&gt; element for a sidebar. The
+            sidebar lies below the article on mobile screens, and to the right
+            on desktop. Excluding the sidebar just leaves that space empty on
+            desktop screens, with no noticeable effect on mobile.
+          </p>
+          <p>
+            The <b>&lt;article&gt;</b> element is laid out as follows:
+          </p>
+          <code>
+&lt;!-- Blog Post Page &lt;article&gt; tag's HTML Layout --&gt;
+
+&lt;article&gt;
+
+  &lt;section id="breadcrumbs"&gt;...&lt;/section&gt;
+
+  &lt;section id="overview"&gt;
+    &lt;h1&gt;{Blog Post Title}&lt;/h1&gt;
+    &lt;span class="date-text"&gt;{Blog Post Date}&lt;/span&gt;
+  &lt;/section&gt;
+
+  ...  &lt;!-- actual blog post content goes here --&gt;
+  &lt;/div&gt;
+
+&lt;/article&gt;
+          </code>
+          <p>
+            There are two elements that come before the actual content of your
+            blog posts:
+          </p>
+          <ol>
+            <li>
+              &lt;section id="breadcrumbs"&gt; provides links to the homepage
+              and writings page, giving users a sense of where they are in the
+              website. It is injected into the webpage in the same method as the
+              "header" and "footer" elements, using a script tag that links to
+              its corresponding file in the "_includes" directory.
+            </li>
+            <li>
+              &lt;section id="overview"&gt; provides the blog post title,
+              an &lt;h1&gt; tag, and the blog post date, a
+              &lt;span class="date-text"&gt; tag.
+            </li>
+          </ol>
+          <p>
+            After these two elements, you can use whatever other tags are needed
+            to create your blog post. This is pretty bare
+            bones, so if anything ends up not being accounted for, let me
+            know.
+          </p>
+          <h2>Conclusion</h2>
+          <p>
+            This article discussed the directory and HTML structure of the blog
+            post template. Notice that this article intentionally does not have
+            a sidebar. The
+            <a href="/writings/20230113-blog_post_tags">next article</a> will
+            discuss the different tags you can use for the blog posts, and will
+            contain the sidebar.
+          </p>
+          <a href="/writings/20230113-blog_post_tags/">Next: Blog Post Tags</a>
+        </article>
+      </div>
+    </main>
+
+    <script src="/_includes/footer.js"></script>
+  </body>
+</html>

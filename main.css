@@ -1,0 +1,400 @@
+/* Poppins Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+
+/* Global Variables --------------------------------------------------------- */
+* {
+  /* Colors */
+  --light: #ffffff;
+  --grey-050: #f5f5f5;
+  --grey-100: #ededed;
+  --grey-200: #dedede;
+  /* --grey-300: #929ca6; */
+  --grey-400: #78818a;
+  --grey-500: #5e6770;
+  --grey-600: #343a40;
+  --blue-400: #209cee;
+  --blue-500: #2282e0;
+  --blue-600: #1f6bb5;
+
+  /* Units */
+  --border-radius: 8px;
+  --main-spacing: 16px;
+  --page-width: 1150px;
+}
+
+
+/* Override Defaults ------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  line-height: 1.5em;  /* this sometimes has to be unset (e.g. headings) */
+}
+
+
+/* Custom Presets ----------------------------------------------------------- */
+a {
+  color: var(--blue-500);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--blue-600);
+  text-decoration: underline;
+}
+
+body {
+  overflow-x: hidden;  /* failsafe - prevent overflow from breaking layout */
+  /* Grid Background */
+  --bg-color: var(--light);
+  --grid-color: var(--grey-050);
+  background-image:
+    linear-gradient(var(--grid-color) 1px, transparent 1px),
+    linear-gradient(to right, var(--grid-color) 1px, var(--bg-color) 1px);
+  background-size: 20px 20px;
+  /* Scrollbar Always Active - prevents layout shifts */
+  overflow-y: scroll;
+  /* Force footer to Bottom of Screen. */
+  min-height: 100vh;  /* body is always at least as tall as the device screen */
+  display: flex;           /* The body element aligns its direct children... */
+  flex-direction: column;  /* ...into a vertical column and... */
+}
+main { flex: 1; }          /* ...the main element fills all available height. */
+
+/* Code Snippets */
+code {
+  display: block;
+  background: var(--grey-100);
+  border-radius: var(--border-radius);
+  font-family: monospace;
+  max-width: 100%;
+  overflow-x: auto;
+  padding: var(--main-spacing);
+  white-space: pre;
+}
+
+/* Figures (images with captions) */
+figure {
+  text-align: center;
+}
+figure figcaption {
+  font-style: italic;
+  color: var(--grey-500);
+}
+
+/* Headings - slightly increase default font sizes */
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1.25rem; }
+h5 { font-size: 1rem; }
+h6 { font-size: 0.75rem; }
+/* reduce default line height */
+h1, h2, h3, h4, h5, h6 { line-height: 1.25em; }
+
+/* Images and Videos */
+img,
+video {
+  border-radius: var(--border-radius);
+  height: auto;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Lists */
+ol,
+ul {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--main-spacing) / 2);
+}
+ol li,
+ul li { padding-left: 1em; }
+ol li { list-style: decimal inside; }
+ul li { list-style: inside; }
+
+/* Main Page Content Section */
+main { padding: var(--main-spacing) 0; }
+main .wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--main-spacing);
+}
+
+/* SVG Images */
+svg { fill: var(--light); }
+
+
+/* Custom Classes ----------------------------------------------------------- */
+
+/* Grouped Article Layouts */
+
+/* Grid Layout */
+.article-grid {
+  display: grid;
+  gap: var(--main-spacing);
+  grid-template-columns: repeat( auto-fill, minmax( min(20em, 100%), 1fr) );
+}
+/* grid article cards */
+.article-grid article {
+  background: var(--grey-100);
+  border-radius: var(--border-radius);
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--main-spacing) / 2);
+  max-width: 100%;
+  overflow: hidden;
+  padding: var(--main-spacing);
+}
+/* grid article card images */
+.article-grid article img {
+  aspect-ratio: 2 / 1;
+  object-fit: cover;
+  width: 100%;
+}
+/* grid article links */
+.article-grid article a {
+  line-height: 1.25em;
+}
+
+/* List Layout */
+.article-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--main-spacing);
+}
+.article-list article:not(:last-child) {
+  border-bottom: 3px solid var(--grey-100);
+  padding-bottom: var(--main-spacing);
+}
+
+/* Container of mixed article-grid and article-list sections */
+.article-gallery > .article-grid,
+.article-gallery > .article-list {
+  border-bottom: 3px solid var(--grey-400);
+  padding-bottom: calc(var(--main-spacing) * 2);
+}
+.article-gallery > *:last-child { border-bottom: 0; }
+
+
+/* Page Breadcrumb Links */
+#breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+}
+
+/* Article Date Text */
+.date-text { color: var(--grey-500); }
+
+
+/* Emphasized Figure Caption */
+figcaption.emphasized {
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: bold;
+}
+
+/* Basic Flexbox Container - can be extended for a page's needs */
+.flex {
+  display: flex;
+  gap: var(--main-spacing);
+}
+
+/* Indent a Page Section */
+.inset-block {
+  padding-left: var(--main-spacing);
+  padding-right: var(--main-spacing);
+}
+
+/*
+  Page Title Area: (underline it)
+  - either just an h1 tag,
+  - or a container with an h1 and other details inside.
+*/
+#overview, h1 {
+  border-bottom: 3px solid var(--grey-400);
+  padding-bottom: var(--main-spacing);
+}
+/*
+  remove the h1 underline if the h1 is inside an #overview container,
+  since #overview already has the underline
+*/
+#overview h1 {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* page wrapper to center content */
+.wrapper {
+  margin: auto;
+  max-width: var(--page-width);
+  padding: 0 var(--main-spacing);
+}
+
+
+/* Header ------------------------------------------------------------------- */
+header {
+  background: var(--grey-600);
+  color: var(--light);
+}
+
+/*
+  Mobile header layout changes between active and inactive states:
+    inactive:
+      - nav is hidden
+      - icon image and hamburger button on opposite sides
+    active:
+      - nav is visible, and displays below icon image and hamburger button
+*/
+header .wrapper {
+  align-items: flex-start;
+  display: flex;
+  gap: var(--main-spacing);
+  justify-content: space-between;
+  padding-bottom: calc(var(--main-spacing) / 2);
+  padding-top: calc(var(--main-spacing) / 2);
+}
+header.active .wrapper {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-areas:
+    "title hamburger"
+    "nav nav";
+}
+/* define grid template areas */
+header #header-title { grid-area: title; }
+header #hamburger { grid-area: hamburger; }
+header nav { grid-area: nav; }
+
+
+/* Unset default line-height - prevents extra white-space */
+header #header-title,
+header #hamburger { line-height: 0; }
+
+/* Set custom size for title image and hamburger svg */
+header #header-title img,
+#hamburger svg {
+  --size: 40px;
+  height: var(--size);
+  width: var(--size);
+}
+
+
+/* Title Icon Image */
+#header-title img { border-radius: 50%; }
+#header-title:hover img { filter: brightness(1.25); }
+
+/* Nav Links */
+header nav {
+  display: none;
+  flex-direction: column;
+  gap: var(--main-spacing);
+  padding-bottom: var(--main-spacing);
+}
+header.active nav { display: flex; }
+
+header nav a { color: var(--light); }
+header nav a:hover { color: var(--blue-400); }
+
+
+/* Hamburger Button */
+#hamburger {
+  cursor: pointer;
+  background: 0;
+  border: 0;
+}
+#hamburger:hover svg {
+  fill: var(--blue-400);
+}
+/* toggle hamburger "bars" svg with "x" svg */
+header .hamburger-x { display: none; }
+header.active .hamburger-bars { display: none; }
+header.active .hamburger-x { display: block; }
+
+
+/* Desktop Header Layout - No Hamburger Menu, Nav Always Displayed */
+@media (min-width: 1000px) {
+  /* all elements on same row */
+  header.active .wrapper { display: flex; }
+  /* no hamburger */
+  #hamburger { display: none; }
+  /* nav links on one line */
+  header nav {
+    align-self: center;
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 0;
+  }
+}
+
+
+/* Footer ------------------------------------------------------------------- */
+footer {
+  background: var(--grey-600);
+  color: var(--light);
+}
+footer .wrapper {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: var(--main-spacing);
+  justify-content: center;
+  padding: calc(var(--main-spacing) / 2) var(--main-spacing);
+  text-align: center;
+}
+
+footer nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--main-spacing);
+  justify-content: center;
+}
+
+footer a {
+  --size: 30px;  /* defines the size of images within footer links */
+  align-items: center;
+  color: var(--light);
+  display: flex;
+  flex-direction: column;
+  font-size: 0.75em;
+}
+footer a svg {
+  height: var(--size);
+  width: var(--size);
+}
+footer a:hover { color: var(--blue-400); }
+footer a:hover svg { fill: var(--blue-400); }
+
+
+#tw-attribution img {
+  height: var(--size);
+  width: var(--size);
+}
+#tw-attribution:hover img {
+  filter: brightness(1.25);
+}
+
+
+/*
+  Desktop Layout:
+  - group name and links on left side
+  - TW attribution on right side
+*/
+@media (min-width: 1000px) {
+  footer .wrapper {
+    display: grid;
+    grid-template-areas:
+      "name attribution"
+      "nav attribution";
+    justify-content: space-between;
+    gap: 0;
+  }
+  footer > b:first-child { grid-area: name; }
+  footer nav { grid-area: nav; }
+  footer #tw-attribution { grid-area: attribution; }
+}

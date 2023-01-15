@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Juan Gonzalez De Mendoza" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/icon_large.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="/icon.png">
+    <link rel="stylesheet" type="text/css" href="/main.css">
+    <link rel="stylesheet" type="text/css" href="/writings/index.css">
+    <title>Blog Post Tags | Juan Gonzalez De Mendoza</title>
+    <meta property="og:title" content="Blog Post Tags | Juan Gonzalez De Mendoza"/>
+    <meta property="og:url" content="https://juangmendoza.com/writings/20230113-blog_post_tags/" />
+    <meta name="description" content="Description of various tags that can be used in this website's blog post template." />
+    <meta property="og:description" content="Description of various tags that can be used in this website's blog post template." />
+  </head>
+  <body>
+    <script src="/_includes/header.js"></script>
+
+    <main id="blogpost">
+      <div class="wrapper">
+
+        <article>
+          <script src="/_includes/blogpost_breadcrumbs.js"></script>
+
+          <section id="overview">
+            <h1>Blog Post Tags</h1>
+            <span class="date-text">January 13th, 2023</span>
+          </section>
+
+          <p>
+            The
+            <a href="/writings/20230112-blog_design_intro">
+              previous article
+            </a>
+            discussed the HTML structure of blog post pages. This one discusses
+            various tags that can be used in each post.
+          </p>
+          <p>
+            Firstly, all tags in the blog post have added space between them to
+            space out the content. Demonstrations of common tags can be found
+            below:
+          </p>
+
+          <h2>Basic Text Wrappers</h2>
+          <p>
+            This text is wrapped in a &lt;p&gt; "paragraph" tag, which keeps
+            all default CSS styles.
+          </p>
+          <span>
+            This text is wrapped in a &lt;span&gt; tag, which has no semantic
+            meaning.
+          </span>
+          <b>
+            This text is wrapped in a &lt;b&gt; "bold" tag.
+          </b>
+          <strong>
+            This text is wrapped in a &lt;strong&gt; "strong" tag.
+          </strong>
+          <i>
+            This text is wrapped in a &lt;i&gt; "italic" tag.
+          </i>
+          <em>
+            This text is wrapped in a &lt;em&gt; "emphasis" tag.
+          </em>
+
+          <h2>Lists</h2>
+          <p>
+            Ordered Lists and Unordered Lists are set to be slightly indented
+            relative to the rest of the text, with some space between each
+            List Entry. For example:
+          </p>
+          <ol>
+            <li>This is an ordered list.</li>
+            <li>It has three entries.</li>
+            <li>It is slightly indented from the rest of the HTML.</li>
+          </ol>
+          <ul>
+            <li>This is an unordered list.</li>
+            <li>It is also slightly indented from the rest of the HTML.</li>
+          </ul>
+
+          <h2>Code Snippets</h2>
+          <p>
+            As demonstrated in the
+            <a href="/writings/20230112-blog_design_intro">previous article</a>,
+            you can add code snippets to your blog posts using the &lt;code&gt;
+            tag. If you've looked at the HTML, you'll notice that the text
+            within this tag must be completely unindented relative to the rest
+            of the HTML. This is because the code tag is set to respect exact
+            indentation and line breaks within the CSS. Thus, if you indent the
+            text within this tag to align with the rest of your HTML, it will
+            show those indentations in the code snippet shown to the user.
+          </p>
+
+          <h2>Headings</h2>
+          <p>
+            The headings' font size is slightly increased from its default
+            values in the CSS. In order to not break the semantic meaning of
+            the page by placing an &lt;h1&gt; tag in the middle of the article
+            (there should only be one &lt;h1&gt; tag per page), here is a photo
+            of how the different heading sizes look relative to each another:
+          </p>
+          <img src="headings.png" alt="Blog Post Headings" />
+
+          <!-- Images -->
+          <h2>Images</h2>
+          <p>
+            Note that each blog post lives in its own sub-directory within the
+            "writings" directory. This allows you to group all assets with its
+            blog post HTML file, and thus your image "src" attribute doesn't
+            need a prefix before the filename.
+          </p>
+          <p>
+            By default, images will take on their actual file width. However,
+            if they are too large, they will simply scale down to 100% width of
+            the article.
+          </p>
+          <!-- Medium Image -->
+          <img src="article-image.webp" alt="Article Image" />
+          <p>
+            The image above will likely fill the entire screen width on mobile
+            devices, and have white space on either side for desktop devices.
+          </p>
+          <!-- Small Image -->
+          <img src="article-image-300x200.png" alt="Smaller Article Image" />
+          <p>
+            The image above shows how smaller images will still center
+            themselves, but will only ever be as large as their actual file
+            size.
+          </p>
+          <!-- Figures -->
+          <figure>
+            <img src="graph-example.jpg" alt="Figure Graph Image Example" />
+            <figcaption>Numbors Make Kewl Graffs</figcaption>
+          </figure>
+          <p>
+            As shown above, you can also use an HTML &lt;figure&gt; tag with
+            &lt;img&gt; and &lt;figcaption&gt; tags as direct children to have
+            an image with italicized text below it. This is great if you'd like
+            to add a graph image with explanation text below it, but can be used
+            with any image you'd like to add a caption to.
+          </p>
+          <h2>Conclusion</h2>
+          <p>
+            This article demonstrated the CSS behavior of various tags that can
+            be used for your blog posts.
+            You can find a blank blog post template
+            <a href="/writings/YYYYMMDD-template/">here</a>.
+          </p>
+        </article>
+
+        <aside>
+          <b>This sidebar is optional.</b>
+          <p>
+            You can put text here if you want.
+            You can also put lil images to spruce things up, as shown below.
+          </p>
+          <img src="sidebar-img.png" alt="/Blog Post 1 Sidebar Image" />
+          <p>
+            You can even put links here. This could be a good area for links
+            that are supplementary to the blog post.
+          </p>
+          <a href="https://www.youtube.com/watch?v=xvFZjo5PgG0">Very Related Link</a>
+        </aside>
+
+      </div>
+    </main>
+
+    <script src="/_includes/footer.js"></script>
+  </body>
+</html>

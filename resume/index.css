@@ -1,0 +1,57 @@
+/* Resume Main Content Area ------------------------------------------------ */
+#resume article,
+#resume article section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--main-spacing);
+}
+
+#resume article {
+  background: var(--light);
+  box-shadow: 0 0 3px var(--grey-500);
+  margin: auto;
+  max-width: 950px;
+  padding: calc(var(--main-spacing) * 2);
+  width: 100%;
+}
+#resume article section:not(:last-child) {
+  border-bottom: 3px solid var(--grey-200);
+  padding-bottom: var(--main-spacing);
+}
+
+
+/* Row-Style Sub-Sections -------------------------------------------------- */
+
+/* items spaced as far apart as possible */
+#resume .flex { justify-content: space-between; }
+
+/* add subtle border to separate them */
+#resume :not(#overview) > .flex {
+  border-top: 1px dashed var(--grey-200);
+  padding-top: var(--main-spacing);
+}
+
+/* on mobile, rows reflow into columns */
+@media (max-width: 1000px) {
+  #resume :not(#overview) > .flex {
+    flex-direction: column;
+  }
+}
+
+
+/* Individual Resume Sections ---------------------------------------------- */
+
+#overview {
+  color: var(--grey-500);
+  text-align: center;
+}
+/* center overview flex items */
+#overview .flex { justify-content: center; }
+
+#education {
+  display: flex;
+  flex-direction: column;
+  gap: var(--main-spacing);
+}
+
+#awards img { margin: auto; }

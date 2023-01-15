@@ -1,0 +1,32 @@
+/* Blog Post Layout */
+/*
+  The mobile layout is a column, with sidebar below article text (uses defaults
+  from "/main.css"), whereas the desktop layout is a row, with sidebar to the
+  right of article text (set below)
+*/
+@media (min-width: 1000px) {
+  #blogpost .wrapper { flex-direction: row; }
+  #blogpost article { width: 75%; }
+  #blogpost aside { width: 25%; }
+}
+
+
+/* Blog Post Article */
+#blogpost article {
+  display: flex;
+  flex-direction: column;
+  gap: var(--main-spacing);
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+
+/* Blog Post Sidebar */
+#blogpost aside {
+  background: var(--grey-100);
+  border-radius: var(--border-radius);
+  display: flex;
+  flex-direction: column;
+  gap: var(--main-spacing);
+  padding: var(--main-spacing);
+}
