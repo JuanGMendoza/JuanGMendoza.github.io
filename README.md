@@ -29,6 +29,8 @@ This folder contains a template "header.js" and "footer.js" file which is used o
 
 There is also a "blogpost_breadcrumbs.js" file in this directory for use on all blog posts. Since the "breadcrumbs" element will be copy/pasted on every blog post, having it templated allows for easier changes down the road.
 
+Lastly, there is a "blog_toc.js" file in this directory for use on all blog posts, which generates a table of contents based on the blog post's heading tags.
+
 ### ".nojekyll" File
 By default, GitHub pages uses a website processor called Jekyll. Jekyll ignores all files and directories beginning with underscores. Adding the ".nojekyll" file in the root directory disables this unnecessary processing.
 
