@@ -47,9 +47,10 @@
 }
 
 /* anchor links */
-#blogpost aside nav a {
-  position: relative;
-  z-index: 1;
+#blogpost aside nav a { position: relative; }
+#blogpost aside nav a span {
+  background: var(--grey-100);
+  display: block;
 }
 #blogpost aside nav a::before {
   background: var(--grey-300);
@@ -60,11 +61,7 @@
   top: 50%;
   transform: translateY(-50%);
   width: 100%;
-  z-index: -1;
-}
-#blogpost aside nav a span {
-  background: var(--grey-100);
-  display: block;
+  z-index: -1
 }
 #blogpost aside nav a span:not(.h1-link) { padding-left: 8px; }
 #blogpost aside nav a span.h2-link { margin-left: 8px; }
