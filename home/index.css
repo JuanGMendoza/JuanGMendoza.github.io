@@ -1,3 +1,6 @@
+main#home .wrapper { background:var(--grey-600); }
+
+h1 { color: var(--light); }
 .article-grid article {
   text-align: center;
 }

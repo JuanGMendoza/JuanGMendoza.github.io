@@ -162,7 +162,7 @@ svg { fill: var(--light); }
   instead add dark bars on either side.
 */
 .article-grid article img.portrait {
-  background: var(--grey-600);
+  background: var(--grey-200);
   object-fit: contain;
 }
 /* grid article links */
