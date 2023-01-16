@@ -25,8 +25,47 @@
 #blogpost aside {
   background: var(--grey-100);
   border-radius: var(--border-radius);
+  padding: var(--main-spacing);
+}
+
+#blogpost aside nav {
   display: flex;
   flex-direction: column;
   gap: var(--main-spacing);
-  padding: var(--main-spacing);
 }
+
+/* large screen layout */
+@media (min-width: 1000px) {
+  #blogpost aside nav {
+    /* always visible in viewport */
+    position: sticky;
+    top: 75px;
+    /* vertical overflow scrolls */
+    max-height: 100vh;
+    overflow-y: auto;
+  }
+}
+
+/* anchor links */
+#blogpost aside nav a { position: relative; }
+#blogpost aside nav a span {
+  background: var(--grey-100);
+  display: block;
+}
+#blogpost aside nav a::before {
+  background: var(--grey-300);
+  content: '';
+  height: 2px;
+  left: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  z-index: -1
+}
+#blogpost aside nav a span:not(.h1-link) { padding-left: 8px; }
+#blogpost aside nav a span.h2-link { margin-left: 8px; }
+#blogpost aside nav a span.h3-link { margin-left: 16px; }
+#blogpost aside nav a span.h4-link { margin-left: 24px; }
+#blogpost aside nav a span.h5-link { margin-left: 32px; }
+#blogpost aside nav a span.h6-link { margin-left: 40px; }

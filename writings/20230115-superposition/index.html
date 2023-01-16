@@ -42,7 +42,7 @@
           <p>
             This post is meant for the layman who read some articles about quantum computing or just quantum mechanics in general, and that is wanting to understand a little more of the jargon mentioned in them. Maybe you just watched a youtube video from a questionable yoga instructor/guru claiming you can "place your mind in superposition with the earth" and wanted to know what the hell they meant. This is the place for you! All you will need to understand this post (or so I claim) is a basic understanding of vectors. My hope is that anyone able to follow this post should be able to understand quantum superposition beyond the popular phrase "it is in both states at the same time!".
           </p>
-          <h4>Mathematical Definition</h4>
+          <h2>Mathematical Definition</h2>
           <p>
             Classical computers, like the one you are reading this article on, work with bits. A bit is any system that has two possible states. The convention is to label these states as "0" and "1". We are then able to represent information as a collection of bits and create algorithms that process these bitss in such a way that solves a problem we want.
           </p>
@@ -76,7 +76,7 @@
           <p>
             Thus, the second way to write this vector is exactly that, the addition of these two scaled unit vectors: 1.5 x̂ + 2 ŷ. This is what is formally called a “linear combination”. Our blue vector is a linear combination of  x̂  and ŷ, furthermore, any vector in this 2-D plane can be represented as a linear combination of these two unit vectors.
           </p>
-          <h4> What does this math mean physically?</h4>
+          <h2> What does this math mean physically?</h2>
           <p>
             Let’s take a step back and remember the sentence we are trying to explain “Superposition is the ability of a quantum system to be in a state which is a linear combination of many other distinct quantum states". We have now learned what a linear combination is in terms of unit vectors. How do we make a linear combination of quantum states? It turns out that quantum states are vectors too! (Instead of vectors in 2-D space, they are vectors in something called Hilbert Space, but this should not change anything mentioned in this discussion) . Instead of putting hats on top of the letters, quantum states are conventionally represented as follows: |x⟩. If we were to use our previous example, but for a quantum system, we could write the linear combination as 1.5 |x⟩ + 2 |y⟩. Have in mind, that |x⟩ and |y⟩ represent distinct quantum states and the linear combination of them is itself a new quantum state, which is a superposition of the other two! It is also important to note that these constants which we called components before are called “amplitudes” in quantum mechanics. For example, one could say the state |x⟩ has an amplitude of 1.5.
           </p>
@@ -99,15 +99,17 @@
             Let’s go back and compare this to our unit of classical computing, the bit. The only thing one can do with a single bit is flip it. If you have a 0 make it a 1, and if you have a 1 make it a 0. There does not exist any other operation one can do with such a simple system. On the other hand, with a qubit, we can flip it, but we can also rotate our vector any amount of degrees around the circle depicted above. This alone gives us an infinite amount of operations one can perform on a qubit. As a consequence, we obtain new ways to encode and process information, which is why we now have a whole field dedicated to quantum information.
           </p>
 
-          <h4>Wait but did you answer the question?</h5>
+          <h2>Wait but did you answer the question?</h2>
           <p>
             A careful reader might notice that previously we asked what a superposition is, which is made of amplitudes, but the last section actually answered what the absolute value squared of an amplitude is (One could even go further and argue that saying they are "a probability" does not even answer what these represent either). The reality is that we actually do not know what an amplitude represents physically, and no one really cares-- Is what a physicist back in the early 1900s would say! Nowadays, the task of answering this question is an entire field of physics. Any theory attempting to explain amplitudes is called "an interpretation of quantum mechanics". This is considered a highly philosophical field of physics, considering most of the highly regarded interpretations have no way of being experimentally tested.
           </p>
 
 
-        <hr>
-        <p id="footnote-1">[1] One thing I did not mention, is that amplitudes are complex numbers. This means that an imaginary part could be added to the real one shown throughout this post. In terms of the graph this means there is one more dimension that needs to be added, going in and out of the page. With this extra dimension you are able to truly represent every possible quantum superposition</p>
+          <hr>
+          <p id="footnote-1">[1] One thing I did not mention, is that amplitudes are complex numbers. This means that an imaginary part could be added to the real one shown throughout this post. In terms of the graph this means there is one more dimension that needs to be added, going in and out of the page. With this extra dimension you are able to truly represent every possible quantum superposition</p>
         </article>
+
+        <script src="/_includes/blog_toc.js"></script>
       </div>
 
 
