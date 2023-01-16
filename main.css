@@ -241,6 +241,10 @@ figcaption.emphasized {
 header {
   background: var(--grey-600);
   color: var(--light);
+  left: 0;
+  position: sticky;
+  right: 0;
+  top: 0;
 }
 
 /*
