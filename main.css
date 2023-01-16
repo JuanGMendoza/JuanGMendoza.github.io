@@ -156,6 +156,15 @@ svg { fill: var(--light); }
   object-fit: cover;
   width: 100%;
 }
+/*
+  portrait orientation grid article card images:
+  do not crop image to 2/1,
+  instead add dark bars on either side.
+*/
+.article-grid article img.portrait {
+  background: var(--grey-600);
+  object-fit: contain;
+}
 /* grid article links */
 .article-grid article a {
   line-height: 1.25em;
@@ -241,6 +250,10 @@ figcaption.emphasized {
 header {
   background: var(--grey-600);
   color: var(--light);
+  left: 0;
+  position: sticky;
+  right: 0;
+  top: 0;
 }
 
 /*
