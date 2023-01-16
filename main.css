@@ -13,6 +13,7 @@
   --grey-400: #78818a;
   --grey-500: #5e6770;
   --grey-600: #343a40;
+  --dark: #000000;
   --blue-400: #209cee;
   --blue-500: #2282e0;
   --blue-600: #1f6bb5;
@@ -47,16 +48,9 @@ a:hover {
 }
 
 body {
+  background: var(--grey-600);
   overflow-x: hidden;  /* failsafe - prevent overflow from breaking layout */
-  /* Grid Background */
-  --bg-color: var(--light);
-  --grid-color: var(--grey-050);
-  background-image:
-    linear-gradient(var(--grid-color) 1px, transparent 1px),
-    linear-gradient(to right, var(--grid-color) 1px, var(--bg-color) 1px);
-  background-size: 20px 20px;
-  /* Scrollbar Always Active - prevents layout shifts */
-  overflow-y: scroll;
+  overflow-y: scroll;  /* Scrollbar Always Active - prevents layout shifts */
   /* Force footer to Bottom of Screen. */
   min-height: 100vh;  /* body is always at least as tall as the device screen */
   display: flex;           /* The body element aligns its direct children... */
@@ -118,11 +112,18 @@ ol li { list-style: decimal inside; }
 ul li { list-style: inside; }
 
 /* Main Page Content Section */
-main { padding: var(--main-spacing) 0; }
-main .wrapper {
+main {
   display: flex;
+  align-items: stretch;
+}
+main .wrapper {
+  background: var(--light);
+  border-radius: var(--border-radius);
+  display: flex;
+  flex: 1;
   flex-direction: column;
   gap: var(--main-spacing);
+  padding: var(--main-spacing);
 }
 
 /* SVG Images */
@@ -162,7 +163,7 @@ svg { fill: var(--light); }
   instead add dark bars on either side.
 */
 .article-grid article img.portrait {
-  background: var(--grey-600);
+  background: var(--grey-200);
   object-fit: contain;
 }
 /* grid article links */
@@ -240,7 +241,7 @@ figcaption.emphasized {
 
 /* page wrapper to center content */
 .wrapper {
-  margin: auto;
+  margin: 0 auto;
   max-width: var(--page-width);
   padding: 0 var(--main-spacing);
 }
@@ -348,7 +349,6 @@ header.active .hamburger-x { display: block; }
 
 /* Footer ------------------------------------------------------------------- */
 footer {
-  background: var(--grey-600);
   color: var(--light);
 }
 footer .wrapper {
