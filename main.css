@@ -13,6 +13,7 @@
   --grey-400: #78818a;
   --grey-500: #5e6770;
   --grey-600: #343a40;
+  --dark: #000000;
   --blue-400: #209cee;
   --blue-500: #2282e0;
   --blue-600: #1f6bb5;
@@ -348,7 +349,6 @@ header.active .hamburger-x { display: block; }
 
 /* Footer ------------------------------------------------------------------- */
 footer {
-  background: var(--grey-600);
   color: var(--light);
 }
 footer .wrapper {
