@@ -28,7 +28,7 @@ document.write(`
 
       <!-- T.Wittig Site Design Attribution -->
       <a href="https://twit96.github.io/" id="tw-attribution">
-        <img src="https://tylerwittig.com/img/icon.png" alt="TW Icon" />
+        <img src="https://tylerwittig.com/img/logo.png" alt="TW Logo" />
         Design by TW
       </a>
 
