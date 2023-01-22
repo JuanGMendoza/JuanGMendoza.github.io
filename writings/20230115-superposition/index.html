@@ -74,11 +74,11 @@
           <img src="./figure4.png" alt="Figure 4" style="max-height:300px">
 
           <p>
-            Thus, the second way to write this vector is exactly that, the addition of these two scaled unit vectors: 1.5 x̂ + 2 ŷ. This is what is formally called a “linear combination”. Our blue vector is a linear combination of  x̂  and ŷ, furthermore, any vector in this 2-D plane can be represented as a linear combination of these two unit vectors.
+            Thus, the second way to write this vector is exactly that, the addition of these two scaled unit vectors: 1.5 x̂ + 2 ŷ. This is what is formally called a “linear combination”. Our blue vector is a linear combination of  x̂  and ŷ, furthermore, any vector in this 2-D plane can be represented as a linear combination of these two unit vectors written as a x̂ + b ŷ (where "a" and "b" could be any real number).
           </p>
           <h4> What does this math mean physically?</h4>
           <p>
-            Let’s take a step back and remember the sentence we are trying to explain “Superposition is the ability of a quantum system to be in a state which is a linear combination of many other distinct quantum states". We have now learned what a linear combination is in terms of unit vectors. How do we make a linear combination of quantum states? It turns out that quantum states are vectors too! (Instead of vectors in 2-D space, they are vectors in something called Hilbert Space, but this should not change anything mentioned in this discussion) . Instead of putting hats on top of the letters, quantum states are conventionally represented as follows: |x⟩. If we were to use our previous example, but for a quantum system, we could write the linear combination as 1.5 |x⟩ + 2 |y⟩. Have in mind, that |x⟩ and |y⟩ represent distinct quantum states and the linear combination of them is itself a new quantum state, which is a superposition of the other two! It is also important to note that these constants which we called components before are called “amplitudes” in quantum mechanics. For example, one could say the state |x⟩ has an amplitude of 1.5.
+            Let’s take a step back and remember the sentence we are trying to explain “Superposition is the ability of a quantum system to be in a state which is a linear combination of many other distinct quantum states". We have now learned what a linear combination is in terms of unit vectors. How do we make a linear combination of quantum states? It turns out that quantum states are vectors too!<a href="#footnote-1">[1]</a>. Instead of putting hats on top of the letters, quantum states are conventionally represented as follows: |x⟩. If we were to use our previous example, but for a quantum system, we could write the linear combination as a |x⟩ + b |y⟩. Have in mind, that |x⟩ and |y⟩ represent distinct quantum states and the linear combination of them is itself a new quantum state, which is a superposition of the other two! It is also important to note that these constants which we called components before are called “amplitudes” in quantum mechanics. For example, one could say the state |x⟩ has an amplitude of "a".
           </p>
 
           <p>
@@ -86,11 +86,12 @@
           </p>
 
           <p>
-            There is a question that comes naturally from learning about superposition, what does this <em>really</em> mean? What does this mathematical concept represent physically? You see, superposition is a mathematical implication of some physical phenomena that had been observed back when quantum mechanics was being formulated. But the reality is that when we measure a quantum system the superposition disappears. For example, if we have a qubit in some superposition, after we measure it we will observe the qubit to be either in the 1 state or the 0 state, we don’t directly observe any combination. Because of this, physicists had a hard time figuring out what a superposition represented physically. After all, physics is the application of mathematical frameworks to our world, it had to represent something. Later on, it was suggested by physicist M. Born that the amplitude of a quantum state in a superposition, is related to the probability of observing this state. To be more specific, the probability of measuring a quantum state is equal to the absolute value of the amplitude squared. For example, if we have a superposition where one of the terms is \(1 \over \sqrt{3}\)|0⟩ then the probability of observing a 0 when we measure it is \(|{{1\over \sqrt{3}}|}^2\) = \(1 \over 3\) . This is one of the postulates of quantum mechanics, which means we assume it is true, due to experimental evidence, but we don’t know why it is so. Also, In order to follow standard probability convention, we want our probabilities to add up to 1. This restricts our vector to have a length of size 1.
+            There is a question that comes naturally from learning about superposition, what does this <em>really</em> mean? What does this mathematical concept represent physically? You see, superposition is a mathematical implication of some physical phenomena that had been observed back when quantum mechanics was being formulated. But the reality is that when we measure a quantum system the superposition disappears. For example, if we have a qubit in some superposition, after we measure it we will observe the qubit to be either in the 1 state or the 0 state, we don’t directly observe any combination. Because of this, physicists had a hard time figuring out what a superposition represented physically. Later on, it was suggested by Max Born that the amplitude of a quantum state in a superposition, is related to the probability of observing this state (now known as the Born rule). To be more specific, the probability of measuring a quantum state is equal to the absolute value of the amplitude squared. For example, if we have a state a |x⟩ + b |y⟩, the Born rule says that the probability of observing outcome 0 is \(|a|^2\), and similarly \(|b|^2\) to observe 1 <a href="#footnote-2">[2]</a>. This is one of the postulates of quantum mechanics, which means we assume it is true, due to experimental evidence, but quantum theory itself does not tell us why. Also, In order to follow standard probability convention, we want our probabilities to add up to 1. This restricts our vector to have a length of size 1.
           </p>
 
+
           <p>
-            If we put everything we have learned together, we can represent a qubit in a graph such as the one below. Where the horizontal axis represents the |0⟩ state and the vertical axis represents the |1⟩ state, and where the vector must lie on the surface of a circle of radius 1<a href="#footnote-1">[1]</a>.
+            If we put everything we have learned together, we can represent a qubit in a graph such as the one below. Where the horizontal axis represents the |0⟩ state and the vertical axis represents the |1⟩ state, and where the vector must lie on the surface of a circle of radius 1<a href="#footnote-3">[3]</a>.
           </p>
 
           <img src="./figure5.png" alt="Figure 5" style="max-height:300px">
@@ -101,13 +102,21 @@
 
           <h4>Wait but did you answer the question?</h5>
           <p>
-            A careful reader might notice that previously we asked what a superposition is, which is made of amplitudes, but the last section actually answered what the absolute value squared of an amplitude is (One could even go further and argue that saying they are "a probability" does not even answer what these represent either). The reality is that we actually do not know what an amplitude represents physically, and no one really cares-- Is what a physicist back in the early 1900s would say! Nowadays, the task of answering this question is an entire field of physics. Any theory attempting to explain amplitudes is called "an interpretation of quantum mechanics". This is considered a highly philosophical field of physics, considering most of the highly regarded interpretations have no way of being experimentally tested.
+            A careful reader might notice that previously we asked what a superposition is, which is made of amplitudes, a & b, but the last section actually answered what the absolute value squared of an amplitude is \(|a|^2\) & \(|b|^2\)(One could even go further and argue that saying they are "a probability" does not even answer what these represent either). The reality is that we actually do not know what an amplitude represents physically, and no one really cares-- Is what a physicist back in the early 1900s would say! Nowadays, the task of answering this question is an entire field of physics. Any theory attempting to explain amplitudes is called "an interpretation of quantum mechanics". This is considered a highly philosophical field of physics, considering most of the highly regarded interpretations have no way of being experimentally tested.
           </p>
 
 
         <hr>
-        <p id="footnote-1">[1] One thing I did not mention, is that amplitudes are complex numbers. This means that an imaginary part could be added to the real one shown throughout this post. In terms of the graph this means there is one more dimension that needs to be added, going in and out of the page. With this extra dimension you are able to truly represent every possible quantum superposition</p>
+        
+
+        <p id="footnote-1">[1]Instead of vectors in 2-D space, they are vectors in something called Hilbert Space, but this should not change anything mentioned in this discussion.
+        </p>
+
+        <p id="footnote-2">[2] One thing I did not mention, is that amplitudes are complex numbers. This means that an imaginary part could be added to the real one shown throughout this post. In terms of the graph this means there is one more dimension that needs to be added, going in and out of the page. With this extra dimension you are able to truly represent every possible quantum superposition.</p>
         </article>
+
+        <p id="footnote-3">[3] For the readers that prefer examples with numbers, consider a superposition where one of the terms is \(1 \over \sqrt{3}\)|0⟩ then the probability of observing a 0 when we measure it is \(|{{1\over \sqrt{3}}|}^2\) = \(1 \over 3\)
+        </p>
       </div>
 
 
