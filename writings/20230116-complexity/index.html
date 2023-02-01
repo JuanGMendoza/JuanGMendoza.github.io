@@ -44,7 +44,7 @@
           <img src="./figure1.png" alt="Figure 5" style="max-height:300px">
           <p>If this condition is met, we say that f(x) is Big O of g(x). To be more specific</p>
 
-          \[  \exists x_0 s.t. \forall x, x > x_0, g(x) > f(x) -> f(n) \in O(g(x)) \]
+          \[  \exists x_0 \forall x such that x > x_0, g(x) > f(x) -> f(n) \in O(g(x)) \]
 
          <p>This measure sets an upper bound for our function, it is bounded above by g(x). As I mentioned before, the goal of this formalism is to be transferred to a measure of computing resources. The function f(x) represents the amount of resources needed by our algorithm after taking x bits as input. For example, a common resource that is examined is time[footnote: Other examples of resources to be modeled by f(x) are; memory/space, T-gates, magic states, and queries]. One could replicate the graph from the figure above, where the y-axis represents the number of seconds an algorithm took to finish, and the x-axis the number of bits given to the algorithm as input. Because we always want to minimize the resources used, a higher value in the graph is always considered a worse value. Due to this, the sentence “f(x) cannot be higher than g(x)” is often written as “f(x) cannot be worse than g(x)”. In fact, the Big O of a function is usually called the “worst-case complexity”.</p>
 
