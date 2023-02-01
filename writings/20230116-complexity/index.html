@@ -33,17 +33,34 @@
           <script src="/_includes/blogpost_breadcrumbs.js"></script>
 
           <section id="overview">
-            <h1>A Not Complex guide to Complexity Theory</h1>
+            <h1>A Not-so-Complex guide to Complexity Theory</h1>
             <span class="date-text">January 31st, 2023</span>
           </section>
 
-          <h2>Asymptotic Notation</h2>
+          <h3>Asymptotic Notation</h3>
           <p>In order to be able to quantify the amount of resources an algorithm requires, we must first learn asymptotic notation, which is the standard in computer science to quantify them. Asymptotic notation describes a function in terms of its behavior as the input approaches infinity. For example let’s start by defining one of the most used notations, the Big O notation.
           Say you have a function f(x) which you are comparing to another function g(x). Now let’s assume that we ignore anything that happens to both functions before some arbitrary point \(x_0\), but after this point, f(x) is always below g(x). See the figure below for an example
           </p>
           <img src="./figure1.png" alt="Figure 5" style="max-height:300px">
+          <p>If this condition is met, we say that f(x) is Big O of g(x). To be more specific</p>
 
-         
+          \[  \exists x_0 s.t. \forall x, x > x_0, g(x) > f(x) -> f(n) \in O(g(x)) \]
+
+         <p>This measure sets an upper bound for our function, it is bounded above by g(x). As I mentioned before, the goal of this formalism is to be transferred to a measure of computing resources. The function f(x) represents the amount of resources needed by our algorithm after taking x bits as input. For example, a common resource that is examined is time[footnote: Other examples of resources to be modeled by f(x) are; memory/space, T-gates, magic states, and queries]. One could replicate the graph from the figure above, where the y-axis represents the number of seconds an algorithm took to finish, and the x-axis the number of bits given to the algorithm as input. Because we always want to minimize the resources used, a higher value in the graph is always considered a worse value. Due to this, the sentence “f(x) cannot be higher than g(x)” is often written as “f(x) cannot be worse than g(x)”. In fact, the Big O of a function is usually called the “worst-case complexity”.</p>
+
+         <p>Similarly, there is another notation used called Big Omega which is the opposite of Big O. A function f(x) is said to be Big Omega of g(x) if after some point \(x_0\) it is always above g(x)</p>
+
+         \[  \exists x_0 s.t. \forall x, x > x_0, g(x) > f(x) -> f(n) \in O(g(x)) \]
+         <p>This g(x) is then considered the best-case complexity of f(x). Now you can quantify resources like a real theoretical computer scientist!</p>
+
+         <h3>Classical Complexity Theory</h3>
+         To go deeper into complexity theory, we must go over a little bit of set theory. More specifically, languages. Buckle up. A language is a set of words built from a defined alphabet. In computer science we usually choose our alphabet to be {0,1}. Therefore, a language can be defined as a collection of bitstrings. For example; one could define a language L as a language where every string must end with a 0
+          L = {0, 00, 000, …, 10, 100, 1000, …, 110, 1100, …}
+          So we have languages, and the elements that make up that language, are words. Imagine we now build an algorithm M that when you give it a bitstring, it outputs “yes”, if the input is a word that belongs in L, and outputs “no” if the input is a word that does not belong in L. Then we say that our algorithm M “decides” the language L. <a href="#footnote-2">[1]</a>
+          
+          <hr>
+          <p id="footnote-1">The word algorithm is very vague in terms of mathematics. If you were to read any of the concepts related to this post in a more formal context, such as a textbook, they will use “Turing Machine” instead of "algorithm". In order to avoid extending this post further by explaining what a Turing Machine is, I decided to omit this. The ideas presented in this post will remain correct if the reader has a basic understanding of what an algorithm is. If you want to be really careful about these definitions, I recommend you learn what a Turing machine is, and replace every instance of “algorithm” with it!</p>
+
         </article>
 
 
