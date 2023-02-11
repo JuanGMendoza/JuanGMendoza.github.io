@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>A Not-so-Complex guide to Complexity Theory  | Juan Gonzalez De Mendoza</title>
+    <title>A Not-so-Complex Guide to Complexity Theory  | Juan Gonzalez De Mendoza</title>
     <meta name="description" content="" />
     <meta name="theme-color" content="#ffffff" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,11 +13,11 @@
     <link rel="icon" href="/icon.png">
     <link rel="stylesheet" type="text/css" href="/main.css">
     <link rel="stylesheet" type="text/css" href="/writings/index.css">
-    <title>A Not-so-Complex guide to Complexity Theory  | Juan Gonzalez De Mendoza</title>
-    <meta property="og:title" content="A Not-so-Complex guide to Complexity Theory | Juan Gonzalez De Mendoza"/>
+    <title>A Not-so-Complex Guide to Complexity Theory  | Juan Gonzalez De Mendoza</title>
+    <meta property="og:title" content="A Not-so-Complex Guide to Complexity Theory | Juan Gonzalez De Mendoza"/>
     <meta property="og:url" content="https://juangmendoza.com/writings/20230116-complexity/" />
-    <meta name="description" content="A beginner's guide to complexity theory" />
-    <meta property="og:description" content="A beginner's guide to complexity theory" />
+    <meta name="description" content="A beginner's Guide to complexity theory" />
+    <meta property="og:description" content="A beginner's Guide to complexity theory" />
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async
           src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-svg.js">
@@ -33,7 +33,7 @@
           <script src="/_includes/blogpost_breadcrumbs.js"></script>
 
           <section id="overview">
-            <h1>A Not-so-Complex guide to Complexity Theory</h1>
+            <h1>A Not-so-Complex Guide to Complexity Theory</h1>
             <span class="date-text">January 31st, 2023</span>
           </section>
 
@@ -76,12 +76,12 @@
           <p>
           So far this post has been very abstract, so let’s come down from our theory cloud a little bit and talk about an example, satisfiability problems (also called SAT). Imagine there are n boolean variables \(x_1, x_2, …, x_n\) and we now make groups out of them, relating them with the \(\lor\) (OR) operator <a href="#footnote-5">[5]</a>, for example:</p>
 
-          \[x_1   \lor x_3  \text{and} x_2   \lor ¬x_1  \lor x_4\]
+          \[(x_1   \lor x_3)  \text{  and  } (x_2   \lor ¬x_1  \lor x_4)\]
           
 
           <p>Each one of these groups is called a “clause”. If there exists an assignment for each variable, such that every clause evaluates to 1, then we say the problem is satisfiable. The example above is satisfiable, take the instance \(x_1 = 1\), \(x_2 = 1\), \(x_3 = 0\), \(x_4 = 0\).</p>
 
-          \[1   \lor 0  = 1 \text{and} 1   \lor 0   \lor 0 = 1\]
+          \[(1   \lor 0  = 1) \text{  and  } (1   \lor 0   \lor 0 = 1)\]
           
 
           <p>How do we describe this problem in terms of everything we have learned so far? Well, problems can be described as languages. In this case, the language is SAT, and the words in SAT correspond to instances that are satisfiable. If we continue to use the example above, \(x_1 \lor x_3 \) and \(x_2 \lor ¬x_1 \lor x_4\) is defined as a word, and because we know that it is satisfiable (there is a solution), then we say this word belongs in SAT.</p>
