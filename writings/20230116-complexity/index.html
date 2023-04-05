@@ -34,7 +34,7 @@
 
           <section id="overview">
             <h1>A Not-so-Complex Guide to Complexity Theory</h1>
-            <span class="date-text">January 31st, 2023</span>
+            <span class="date-text">March 5th, 2023</span>
           </section>
 
           <h4>Preface</h4>
@@ -54,7 +54,7 @@
          <p>Similarly, there is another notation used called Big Omega which is the opposite of Big O. A function f(x) is said to be Big Omega of g(x) if after some point \(x_0\) it is always above g(x)</p>
 
          \[  \exists x_0 \text{ s.t. } \forall x > x_0 \text{,  } g(x) < f(x) \Rightarrow f(n) \in \Omega(g(x)) \]
-         <p>This g(x) is then considered the best-case complexity of f(x). Now you can quantify resources like a real theoretical computer scientist! </p>
+         <p>This g(x) is then considered the best-case complexity of f(x). Now you can quantify resources like a theoretical computer scientist! </p>
 
          <h4>Classical Complexity Theory</h4>
          <p>
@@ -112,7 +112,7 @@
           <p>Notice that these two problems are two sides of the same coin: infinite theoretical framework vs. finite world. The answer to this is simple: it has worked great so far. In practice, we do not tend to have algorithms that stay below \(x_0\) for an input size that represents a useful problem and is too big to do by hand. As for the second point, I'll leave this quote by S. Aaronson bringing up some examples: "If cases like that regularly arose in practice, then it would’ve turned out that we were using the wrong abstraction. But so far, it seems like we’re using the right abstraction. Of the big problems solvable in polynomial time – matching, linear programming, primality testing, etc. – most of them really do have practical algorithms. And of the big problems that we think take exponential time – theorem-proving, circuit minimization, etc. – most of them really don’t have practical algorithms."<a href="#footnote-7">[7]</a></p>
 
           <hr>
-          <p id="footnote-1">[1] Other examples of resources to be modeled by f(x) are; memory/space, T-gates, magic states, and queries</p>
+          <p id="footnote-1">[1] Other examples of resources to be modeled by f(x) are; memory/space, T-gates, magic states, and black-box queries. This last one is typically called "Query-Complexity Theory"</p>
           <p id="footnote-2">[2] The word algorithm is very vague in terms of mathematics. If you were to read any of the concepts related to this post in a more formal context, such as a textbook, they will use “Turing Machine” instead of "algorithm". In order to avoid extending this post further by explaining what a Turing Machine is, I decided to omit this. The ideas presented in this post will remain correct if the reader has a basic understanding of what an algorithm is. If you want to be really careful about these definitions, I recommend you learn what a Turing machine is, and replace every instance of “algorithm” with it!</p>
 
           <p id="footnote-3">[3]If you ever see someone say that a problem can be solved “efficiently” they mean in polynomial time.</p>
