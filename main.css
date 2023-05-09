@@ -221,6 +221,9 @@ figcaption.emphasized {
   padding-right: var(--main-spacing);
 }
 
+/* MathJax Equations Wrapper - prevents overflow on mobile */
+.math-wrap svg { max-width: 100%; }
+
 /*
   Page Title Area: (underline it)
   - either just an h1 tag,

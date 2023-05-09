@@ -47,13 +47,17 @@
           <img src="./figure1.png" alt="Figure 1" style="max-height:300px">
           <p>If this condition is met, we say that f(x) is Big O of g(x). To be more specific</p>
 
-          \[  \exists x_0 \text{ s.t. } \forall x > x_0 \text{,  } g(x) > f(x) \Rightarrow f(n) \in O(g(x)) \]
+          <div class="math-wrap">
+            \[  \exists x_0 \text{ s.t. } \forall x > x_0 \text{,  } g(x) > f(x) \Rightarrow f(n) \in O(g(x)) \]
+          </div>
 
          <p>This measure sets an upper bound for our function, it is bounded above by g(x). As I mentioned before, the goal of this formalism is to be transferred to a measure of computing resources. The function f(x) represents the amount of resources needed by our algorithm after taking x bits as input. For example, a common resource that is examined is time<a href="#footnote-3">[1]</a>. One could replicate the graph from the figure above, where the y-axis represents the number of seconds an algorithm took to finish, and the x-axis the number of bits given to the algorithm as input. Because we always want to minimize the resources used, a higher value in the graph is always considered a worse value. Due to this, the sentence “f(x) cannot be higher than g(x)” is often written as “f(x) cannot be worse than g(x)”. In fact, the Big O of a function is usually called the “worst-case complexity”.</p>
 
          <p>Similarly, there is another notation used called Big Omega which is the opposite of Big O. A function f(x) is said to be Big Omega of g(x) if after some point \(x_0\) it is always above g(x)</p>
 
-         \[  \exists x_0 \text{ s.t. } \forall x > x_0 \text{,  } g(x) < f(x) \Rightarrow f(n) \in \Omega(g(x)) \]
+         <div class="math-wrap">
+           \[  \exists x_0 \text{ s.t. } \forall x > x_0 \text{,  } g(x) < f(x) \Rightarrow f(n) \in \Omega(g(x)) \]
+         </div>
          <p>This g(x) is then considered the best-case complexity of f(x). Now you can quantify resources like a theoretical computer scientist! </p>
 
          <h4>Classical Complexity Theory</h4>
@@ -61,14 +65,17 @@
          To go deeper into complexity theory, we must go over a little bit of set theory. More specifically, languages! Buckle up.</p>
 
          <p> A language is a set of words built from a defined alphabet. In computer science we usually choose our alphabet to be {0,1}. Therefore, a language can be defined as a collection of bitstrings. For example; one could define a language L as the language where every string must end with a 0</p>
-          \[L = \{0, 00, 000, …, 10, 100, 1000, …, 110, 1100, …\}\]
+
+         <div class="math-wrap">
+           \[L = \{0, 00, 000, …, 10, 100, 1000, …, 110, 1100, …\}\]
+         </div>
           <p>
           So we have languages, and the elements that make up that language, are words. Imagine we now build an algorithm M that when you give it a bitstring, it outputs “yes”, if the input is a word that belongs in L, and outputs “no” if the input is a word that does not belong in L. Then we say that our algorithm M “decides” the language L. <a href="#footnote-1">[1]</a></p>
           <img src="./figure2.png" alt="Figure 2" style="max-height:300px">
 
           <p>
             Now we can build some sort of zoo<a href="#footnote-2">[2]</a> of languages where we separate them depending on the different resources needed. For example, “P” is defined as the class of languages that require a polynomial amount of time to be decided. In other words, their Big O corresponds to a g(x) which is a polynomial<a href="#footnote-3">[3]</a> Similarly, the class “EXP” is defined as all languages that can be decided in an exponential amount of time. Now let’s take a moment to think about the relationship between these two classes. If there is a language L which is shown to be in P, then by definition there exists an algorithm M that decides L in polynomial time. We can then build a new algorithm M’ such that: receive input x, send it into the algorithm that we know solves it in polynomial time, M, and then stall an exponential amount of time <a href="#footnote-4">[4]</a>. Finally, output whatever came out of M. This proves that any language that is in P, is also in EXP. Proofs that do not depend on any constraints of the language represent properties of the entire class because it works for all languages in the class. In this case, we proved that the class P is contained inside EXP! This is the heart of complexity theory.
-           
+
 
           </p>
           <h4>P vs. NP (+ an example of a language!)</h4>
@@ -79,13 +86,16 @@
           <p>
           So far this post has been very abstract, so let’s come down from our theory cloud a little bit and talk about an example, satisfiability problems (also called SAT). Imagine there are n boolean variables \(x_1, x_2, …, x_n\) and we now make groups out of them, relating them with the \(\lor\) (OR) operator <a href="#footnote-5">[5]</a>, for example:</p>
 
-          \[(x_1   \lor x_3)  \text{  and  } (x_2   \lor ¬x_1  \lor x_4)\]
-          
+          <div class="math-wrap">
+            \[(x_1   \lor x_3)  \text{  and  } (x_2   \lor ¬x_1  \lor x_4)\]
+          </div>
+
 
           <p>Each one of these groups is called a “clause”. If there exists an assignment for each variable, such that every clause evaluates to 1, then we say the problem is satisfiable. The example above is satisfiable, take the instance \(x_1 = 1\), \(x_2 = 1\), \(x_3 = 0\), \(x_4 = 0\).</p>
 
-          \[(1   \lor 0  = 1) \text{  and  } (1   \lor 0   \lor 0 = 1)\]
-          
+          <div class="math-wrap">
+            \[(1   \lor 0  = 1) \text{  and  } (1   \lor 0   \lor 0 = 1)\]
+          </div>
 
           <p>How do we describe this problem in terms of everything we have learned so far? Well, problems can be described as languages. In this case, the language is SAT, and the words in SAT correspond to instances that are satisfiable. If we continue to use the example above, \(x_1 \lor x_3 \) and \(x_2 \lor ¬x_1 \lor x_4\) is defined as a word, and because we know that it is satisfiable (there is a solution), then we say this word belongs in SAT.</p>
 
@@ -106,7 +116,7 @@
           <ol>
             <li>We don't live in asymptopia!: In the real world, problem sizes do not go to infinity. We should be practical and not use infinities to classify finite-size problems. What if the input sizes that I care about are below the \(x_0\) under which the behavior of the resources is unknown?</li>
             <li>Classifying a problem as "efficient" cannot be done only based on the shape of the function. What if a problem is solvable in polynomial time, but the polynomial is n to the power of 50 000? Or what if a problem takes exponential time, but the exponential is 1.000 000 01 to the power of n <a href="#footnote-7">[7]</a></li>
-          
+
           </ol>
 
           <p>Notice that these two problems are two sides of the same coin: infinite theoretical framework vs. finite world. The answer to this is simple: it has worked great so far. In practice, we do not tend to have algorithms that stay below \(x_0\) for an input size that represents a useful problem and is too big to do by hand. As for the second point, I'll leave this quote by S. Aaronson bringing up some examples: "If cases like that regularly arose in practice, then it would’ve turned out that we were using the wrong abstraction. But so far, it seems like we’re using the right abstraction. Of the big problems solvable in polynomial time – matching, linear programming, primality testing, etc. – most of them really do have practical algorithms. And of the big problems that we think take exponential time – theorem-proving, circuit minimization, etc. – most of them really don’t have practical algorithms."<a href="#footnote-7">[7]</a></p>
@@ -124,7 +134,7 @@
           <p id="footnote-6">[6] This operator returns 1 if at least one of the variables is 1, read <a href="https://en.wikipedia.org/wiki/Logical_disjunction#Semantics">this</a> for more details</p>
           <p id="footnote-7">[7] Scott Aaronson. (2013) Quantum Computing Since Democritus. Page 54. Cambridge University Press. </p>
 
-          
+
 
         </article>
 
