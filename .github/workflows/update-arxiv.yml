@@ -1,4 +1,4 @@
-name: Update arXiv publications
+name: Update publications
 on:
   schedule:
     - cron: '23 12 * * *'
@@ -14,9 +14,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Refresh publications
+      - name: Refresh arXiv publications
+        id: arxiv
+        continue-on-error: true
         shell: pwsh
         run: ./scripts/update-arxiv.ps1
+      - name: Refresh Substack posts
+        id: substack
+        continue-on-error: true
+        shell: pwsh
+        run: ./scripts/update-substack.ps1
       - name: Save changes
         shell: bash
         run: |
@@ -24,7 +31,7 @@ jobs:
             git config user.name 'github-actions[bot]'
             git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
             git add writings/index.html
-            git commit -m "Update arXiv publications"
+            git commit -m "Update publications"
             git push
           fi
       # Bot commits do not trigger a Pages build automatically. Request it explicitly.
@@ -32,3 +39,8 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: gh api --method POST repos/${{ github.repository }}/pages/builds
+      - name: Report feed failures
+        if: always() && (steps.arxiv.outcome == 'failure' || steps.substack.outcome == 'failure')
+        run: |
+          echo 'A publication feed failed. Its saved list was preserved; inspect the refresh steps above.'
+          exit 1

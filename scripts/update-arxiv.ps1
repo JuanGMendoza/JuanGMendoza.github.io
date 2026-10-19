@@ -31,7 +31,7 @@ foreach ($entry in $doc.SelectNodes('/a:feed/a:entry', $ns)) {
     $names = Encode ($authors -join ', ')
     $articles += @"
             <article>
-              <h4><a href="https://arxiv.org/abs/$paperId">$title</a></h4>
+              <h3><a href="https://arxiv.org/abs/$paperId">$title</a></h3>
               <p class="publication-authors">$names</p>
               <span class="date-text"><time datetime="$isoDate">$dateText</time></span>
               <p><a href="https://arxiv.org/abs/$paperId">arXiv:$paperId</a> &middot; <a href="https://arxiv.org/pdf/$paperId">PDF</a></p>
