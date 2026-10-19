@@ -1,5 +1,15 @@
 # juangmendoza.github.io
 
+## Automatic arXiv publications
+
+The writings page contains saved publication HTML, so papers appear without JavaScript or a live arXiv connection. `scripts/update-arxiv.ps1` refreshes only the marked publication block using the arXiv Atom API. It searches quant-ph and filters for the exact author name `Juan Gonzalez De Mendoza`. Update this filter if the author name used on future submissions changes.
+
+Run locally with PowerShell 7: `pwsh -File scripts/update-arxiv.ps1`.
+
+After these changes are pushed to the default branch, the **Update arXiv publications** GitHub Actions workflow checks daily at 12:23 UTC. It can also be run manually from the Actions tab. It commits changed publications and explicitly requests a GitHub Pages rebuild, since commits made by the Actions token do not automatically trigger Pages builds. This assumes Pages continues to deploy from the default branch, with Actions allowed and the workflow permitted to write repository contents and Pages builds. No personal access token is needed.
+
+API failures, empty matching results, decreasing publication counts, and results exceeding the 100-record query limit fail the update while preserving the saved list. Check failed runs in Actions. Public-repository schedules may be disabled by GitHub after 60 days without repository activity; re-enable the workflow if that happens.
+
 
 ## Directory Structure
 The root directory is structured so that each website page is nested within its own directory, and its HTML file is named "index.html". This is useful because it formats your links based on its location in the project and removes the HTML extension.
