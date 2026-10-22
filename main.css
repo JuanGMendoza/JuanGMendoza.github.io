@@ -351,17 +351,22 @@ header.active .hamburger-x { display: block; }
 
 
 /* Footer ------------------------------------------------------------------- */
-footer {
-  color: var(--light);
-}
+footer { color: var(--light); }
+
 footer .wrapper {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  gap: var(--main-spacing);
-  justify-content: center;
   padding: calc(var(--main-spacing) / 2) var(--main-spacing);
   text-align: center;
+
+  display: grid;
+  gap: var(--main-spacing);
+
+  /* desktop layout */
+  @media (min-width: 40rem) {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
 }
 
 footer nav {
@@ -372,45 +377,20 @@ footer nav {
 }
 
 footer a {
-  --size: 30px;  /* defines the size of images within footer links */
   align-items: center;
   color: var(--light);
   display: flex;
   flex-direction: column;
   font-size: 0.75em;
-}
-footer a svg {
-  height: var(--size);
-  width: var(--size);
-}
-footer a:hover { color: var(--blue-400); }
-footer a:hover svg { fill: var(--blue-400); }
 
-
-#tw-attribution img {
-  height: var(--size);
-  width: var(--size);
-}
-#tw-attribution:hover img {
-  filter: brightness(1.25);
-}
-
-
-/*
-  Desktop Layout:
-  - group name and links on left side
-  - TW attribution on right side
-*/
-@media (min-width: 1000px) {
-  footer .wrapper {
-    display: grid;
-    grid-template-areas:
-      "name attribution"
-      "nav attribution";
-    justify-content: space-between;
-    gap: 0;
+  svg {
+    --size: 30px;
+    height: var(--size);
+    width: var(--size);
   }
-  footer > b:first-child { grid-area: name; }
-  footer nav { grid-area: nav; }
-  footer #tw-attribution { grid-area: attribution; }
+}
+
+footer a:hover {
+  color: var(--blue-400);
+  svg { fill: var(--blue-400); }
 }
