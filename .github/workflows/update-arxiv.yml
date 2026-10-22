@@ -1,5 +1,10 @@
 name: Update publications
 on:
+  push:
+    branches: [master]
+    paths:
+      - '.github/workflows/update-arxiv.yml'
+      - 'scripts/update-*.ps1'
   schedule:
     - cron: '23 12 * * *'
   workflow_dispatch:
@@ -25,6 +30,7 @@ jobs:
         shell: pwsh
         run: ./scripts/update-substack.ps1
       - name: Save changes
+        id: save
         shell: bash
         run: |
           if ! git diff --quiet -- writings/index.html; then
@@ -33,9 +39,11 @@ jobs:
             git add writings/index.html
             git commit -m "Update publications"
             git push
+            echo 'changed=true' >> "$GITHUB_OUTPUT"
           fi
       # Bot commits do not trigger a Pages build automatically. Request it explicitly.
       - name: Rebuild GitHub Pages
+        if: steps.save.outputs.changed == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
         run: gh api --method POST repos/${{ github.repository }}/pages/builds

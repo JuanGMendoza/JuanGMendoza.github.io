@@ -1,7 +1,27 @@
 param([string]$FeedPath, [string]$PagePath = "$PSScriptRoot/../writings/index.html")
 $ErrorActionPreference = 'Stop'
 $xml = if ($FeedPath) { [IO.File]::ReadAllText($FeedPath) } else {
-    (Invoke-WebRequest -Uri 'https://blowthepopsiclestand.substack.com/feed' -TimeoutSec 60 -MaximumRetryCount 2 -RetryIntervalSec 5).Content
+    try {
+        (Invoke-WebRequest -Uri 'https://blowthepopsiclestand.substack.com/feed' -TimeoutSec 60 -MaximumRetryCount 2 -RetryIntervalSec 5).Content
+    } catch {
+        # Substack sometimes challenges requests from GitHub-hosted runners.
+        # Skip only known access/rate-limit responses; parsing and other errors
+        # must still fail so actual updater defects remain visible.
+        $status = if ($_.Exception.Response) { [int]$_.Exception.Response.StatusCode } else { 0 }
+        $page = [IO.File]::ReadAllText($PagePath)
+        $hasSavedPosts = $page -match '(?s)<!-- BEGIN SUBSTACK PUBLICATIONS -->\s*<article>.*?<!-- END SUBSTACK PUBLICATIONS -->'
+        if ($status -notin @(403, 429) -or !$hasSavedPosts) { throw }
+        $message = "Substack refresh skipped (HTTP $status). Saved posts remain visible. New posts may be delayed until Substack accepts requests; the next scheduled run will retry."
+        if ($env:GITHUB_ACTIONS -eq 'true') {
+            Write-Host "::warning title=Substack feed unavailable::$message"
+            if ($env:GITHUB_STEP_SUMMARY) {
+                Add-Content -LiteralPath $env:GITHUB_STEP_SUMMARY -Value "### Substack refresh skipped`n$message`n"
+            }
+        } else {
+            Write-Warning $message
+        }
+        return
+    }
 }
 $doc = [xml]::new()
 $doc.XmlResolver = $null
