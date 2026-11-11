@@ -1,4 +1,4 @@
-const fallback = 'assets/portrait.svg';
+const fallback = 'data:image/svg+xml,' + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><path fill="#141b17" d="M0 0h400v400H0z"/><circle cx="200" cy="145" r="65" fill="#647268"/><path fill="#647268" d="M65 400v-35a135 135 0 0 1 270 0v35z"/></svg>');
 const wall = document.querySelector('#wall');
 const status = document.querySelector('#status');
 
@@ -53,4 +53,5 @@ async function openArchives() {
 }
 
 openArchives();
+
 
